@@ -41,6 +41,17 @@ const TechnicalSaloon = () => {
 
       if (response.ok) {
         setIsSubmitted(true);
+        
+        // WhatsApp Redirect
+        const phoneNumber = '56932924865';
+        const message = `Hola, me acabo de registrar en el Technical Saloon Huawei.\n\nMis datos:\nNombre: ${formData.name}\nEmpresa: ${formData.company}\nEmail: ${formData.email}`;
+        const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+        
+        // Open WhatsApp in a new tab after a short delay to show success message
+        setTimeout(() => {
+          window.open(whatsappUrl, '_blank');
+        }, 1500);
+
         // Reset form after successful submission
         setTimeout(() => {
           setFormData({
