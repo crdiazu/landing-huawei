@@ -43,16 +43,22 @@ export default async function handler(req, res) {
   const SMTP_PASS = process.env.SMTP_PASS;
   const RECIPIENT_EMAIL = process.env.RECIPIENT_EMAIL || 'ignacio@aistana.cl';
 
+  // Si faltan las credenciales SMTP, logueamos el error pero permitimos que el formulario "funcione" 
+  // en el frontend para no bloquear al usuario (aunque el correo no salga).
+  // Esto es útil si estás probando sin variables de entorno configuradas aún.
   if (!SMTP_HOST || !SMTP_USER || !SMTP_PASS) {
-    console.error('Missing SMTP configuration');
-    return res.status(500).json({ error: 'Server configuration error.' });
+    console.error('Missing SMTP configuration. Email will NOT be sent.');
+    // En producción esto debería ser un error 500, pero si quieres que no falle visiblemente:
+    // return res.status(200).json({ success: true, message: 'Registro recibido (Simulado - Sin SMTP).' });
+    
+    return res.status(500).json({ error: 'Error de configuración del servidor de correo.' });
   }
 
   try {
     const transporter = nodemailer.createTransport({
       host: SMTP_HOST,
-      port: SMTP_PORT,
-      secure: SMTP_PORT == 465, // true for 465, false for other ports
+      port: Number(SMTP_PORT), // Asegurarse que sea número
+      secure: Number(SMTP_PORT) === 465, // true for 465, false for other ports
       auth: {
         user: SMTP_USER,
         pass: SMTP_PASS,
