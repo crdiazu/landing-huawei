@@ -140,27 +140,25 @@ const TechnicalSaloon = () => {
               <form className="registration-form" onSubmit={handleSubmit}>
                 <div className="form-row">
                   <div className="form-group">
-                    <label htmlFor="name">Nombre Completo *</label>
+                    <label htmlFor="name">Nombre Completo</label>
                     <input
                       type="text"
                       id="name"
                       name="name"
                       value={formData.name}
                       onChange={handleInputChange}
-                      required
                       placeholder="Ingresa tu nombre completo"
                     />
                   </div>
                   
                   <div className="form-group">
-                    <label htmlFor="email">Email Corporativo *</label>
+                    <label htmlFor="email">Email Corporativo</label>
                     <input
-                      type="email"
+                      type="text"
                       id="email"
                       name="email"
                       value={formData.email}
                       onChange={handleInputChange}
-                      required
                       placeholder="tu.email@empresa.com"
                     />
                   </div>
@@ -168,14 +166,13 @@ const TechnicalSaloon = () => {
                 
                 <div className="form-row">
                   <div className="form-group">
-                    <label htmlFor="company">Empresa *</label>
+                    <label htmlFor="company">Empresa</label>
                     <input
                       type="text"
                       id="company"
                       name="company"
                       value={formData.company}
                       onChange={handleInputChange}
-                      required
                       placeholder="Nombre de tu empresa"
                     />
                   </div>
@@ -194,14 +191,13 @@ const TechnicalSaloon = () => {
                 </div>
                 
                 <div className="form-group">
-                  <label htmlFor="phone">Teléfono de Contacto *</label>
+                  <label htmlFor="phone">Teléfono de Contacto</label>
                   <input
-                    type="tel"
+                    type="text"
                     id="phone"
                     name="phone"
                     value={formData.phone}
                     onChange={handleInputChange}
-                    required
                     placeholder="+56 9 1234 5678"
                   />
                 </div>
@@ -234,10 +230,6 @@ const TechnicalSaloon = () => {
                 >
                   {isLoading ? 'Enviando...' : 'Confirmar Registro'}
                 </button>
-                
-                <p className="form-note">
-                  * Los campos marcados con asterisco son obligatorios.
-                </p>
               </form>
             )}
           </div>
