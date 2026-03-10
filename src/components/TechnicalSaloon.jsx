@@ -7,10 +7,13 @@ const TechnicalSaloon = () => {
     email: '',
     company: '',
     phone: '',
-    position: ''
+    position: '',
+    honeypot: '' // Spam protection
   });
 
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const [errorMessage, setErrorMessage] = useState('');
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -22,23 +25,20 @@ const TechnicalSaloon = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setIsLoading(true);
+    setErrorMessage('');
     
     try {
-      // This would be replaced with actual API call to your backend
-      // Example using fetch:
-      /*
-      const response = await fetch('/api/register-technical-saloon', {
+      const response = await fetch('/api/submit-form', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({
-          ...formData,
-          event: 'Technical Saloon - 18 de Marzo',
-          recipient: 'ignacio@aistana.cl'
-        }),
+        body: JSON.stringify(formData),
       });
       
+      const data = await response.json();
+
       if (response.ok) {
         setIsSubmitted(true);
         // Reset form after successful submission
@@ -48,34 +48,20 @@ const TechnicalSaloon = () => {
             email: '',
             company: '',
             phone: '',
-            position: ''
+            position: '',
+            honeypot: ''
           });
           setIsSubmitted(false);
-        }, 3000);
+        }, 5000);
       } else {
-        throw new Error('Error en el servidor');
+        throw new Error(data.error || 'Error en el servidor');
       }
-      */
-      
-      // For demo purposes - simulate successful submission
-      console.log('Form data to be sent to ignacio@aistana.cl:', formData);
-      setIsSubmitted(true);
-      
-      // Reset form after successful submission
-      setTimeout(() => {
-        setFormData({
-          name: '',
-          email: '',
-          company: '',
-          phone: '',
-          position: ''
-        });
-        setIsSubmitted(false);
-      }, 3000);
       
     } catch (error) {
       console.error('Error submitting form:', error);
-      alert('Error al enviar el formulario. Por favor, intenta nuevamente.');
+      setErrorMessage('Hubo un problema al enviar tu registro. Por favor, intenta nuevamente o contáctanos directamente.');
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -200,14 +186,38 @@ const TechnicalSaloon = () => {
                     placeholder="+56 9 1234 5678"
                   />
                 </div>
+
+                {/* Honeypot field - hidden from real users */}
+                <div style={{ display: 'none' }}>
+                  <label htmlFor="honeypot">No llenar esto</label>
+                  <input
+                    type="text"
+                    id="honeypot"
+                    name="honeypot"
+                    value={formData.honeypot}
+                    onChange={handleInputChange}
+                    tabIndex="-1"
+                    autoComplete="off"
+                  />
+                </div>
                 
-                <button type="submit" className="btn btn-primary btn-large">
-                  Confirmar Registro
+                {errorMessage && (
+                  <div className="error-message" style={{ color: '#ff6b6b', textAlign: 'center', marginBottom: '15px' }}>
+                    {errorMessage}
+                  </div>
+                )}
+                
+                <button 
+                  type="submit" 
+                  className="btn btn-primary btn-large"
+                  disabled={isLoading}
+                  style={{ opacity: isLoading ? 0.7 : 1, cursor: isLoading ? 'wait' : 'pointer' }}
+                >
+                  {isLoading ? 'Enviando...' : 'Confirmar Registro'}
                 </button>
                 
                 <p className="form-note">
-                  * Los campos marcados con asterisco son obligatorios. 
-                  Los datos serán enviados a ignacio@aistana.cl
+                  * Los campos marcados con asterisco son obligatorios.
                 </p>
               </form>
             )}
