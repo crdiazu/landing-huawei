@@ -1,0 +1,63 @@
+/* src/components/Features.css */
+.features-section {
+  background-color: var(--huawei-white);
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 40px;
+  margin-top: 60px;
+}
+
+.feature-card {
+  padding: 40px;
+  background-color: var(--huawei-white);
+  border: 1px solid var(--huawei-light-gray);
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.05);
+  border-color: transparent;
+}
+
+.feature-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 4px;
+  background-color: var(--huawei-red);
+  transition: width 0.3s ease;
+}
+
+.feature-card:hover::before {
+  width: 100%;
+}
+
+.feature-icon {
+  color: var(--huawei-red);
+  margin-bottom: 25px;
+  display: inline-block;
+  padding: 15px;
+  background-color: rgba(230,0,18,0.05);
+  border-radius: 50%;
+}
+
+.feature-title {
+  font-size: 1.25rem;
+  margin-bottom: 15px;
+  color: var(--huawei-black);
+}
+
+.feature-desc {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}

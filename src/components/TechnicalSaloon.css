@@ -1,0 +1,302 @@
+/* src/components/TechnicalSaloon.css */
+.technical-saloon-section {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--huawei-black);
+  color: var(--huawei-white);
+  overflow: hidden;
+  padding: 140px 20px 60px;
+}
+
+.technical-saloon-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.technical-saloon-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 800px;
+  height: 800px;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(255,255,255,0.55) 0%, rgba(255,255,255,0) 55%),
+    radial-gradient(circle at 80% 80%, rgba(0,123,255,0.55) 0%, rgba(0,123,255,0) 60%);
+  z-index: 1;
+  filter: blur(8px);
+  opacity: 0.9;
+}
+
+.technical-saloon-particles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    radial-gradient(rgba(255,255,255,0.1) 1px, transparent 1px),
+    radial-gradient(rgba(255,255,255,0.05) 1px, transparent 1px);
+  background-size: 50px 50px, 100px 100px;
+  background-position: 0 0, 25px 25px;
+  z-index: 1;
+  opacity: 0.5;
+}
+
+.technical-saloon-content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 1000px;
+}
+
+.brand-strip {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 40px;
+  width: 100%;
+  background-color: var(--huawei-black);
+  padding: 40px 0 30px;
+}
+
+.brand-strip-inner {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 0 24px;
+}
+
+.brand-logo-img {
+  height: 52px;
+  width: auto;
+  display: block;
+}
+
+.brand-logo-tecnovoa {
+  height: 48px;
+}
+
+.brand-strip-divider {
+  color: #999;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.event-header {
+  margin-bottom: 60px;
+}
+
+.event-tag {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--huawei-red);
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.event-title {
+  font-size: 3.5rem;
+  font-weight: 800;
+  margin-bottom: 20px;
+  line-height: 1.1;
+}
+
+.event-subtitle {
+  font-size: 1.2rem;
+  color: #ccc;
+  margin-bottom: 40px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+}
+
+.event-details {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.detail-item {
+  text-align: center;
+  padding: 20px;
+  background: linear-gradient(135deg, rgba(255,255,255,0.16), rgba(0,123,255,0.14));
+  border-radius: 12px;
+  border: 1px solid rgba(173, 216, 230, 0.7);
+  box-shadow: 0 18px 45px rgba(0, 123, 255, 0.35);
+  backdrop-filter: blur(18px);
+}
+
+.detail-item h3 {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+  color: var(--huawei-red);
+}
+
+.detail-item p {
+  font-size: 1rem;
+  color: #ccc;
+}
+
+.registration-section {
+  background: linear-gradient(135deg, rgba(255,255,255,0.2), rgba(0,123,255,0.18));
+  border-radius: 20px;
+  padding: 40px;
+  border: 1px solid rgba(173, 216, 230, 0.8);
+  backdrop-filter: blur(20px);
+  box-shadow: 0 24px 60px rgba(0, 123, 255, 0.4);
+}
+
+.registration-content {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.registration-title {
+  font-size: 2.2rem;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.registration-description {
+  color: #ccc;
+  text-align: center;
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+.registration-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: var(--huawei-white);
+}
+
+.form-group input {
+  padding: 15px;
+  border: 2px solid rgba(173, 216, 230, 0.8);
+  border-radius: 8px;
+  background: rgba(6, 22, 48, 0.65);
+  color: var(--huawei-white);
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: var(--huawei-red);
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.form-group input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.btn-large {
+  padding: 18px 40px;
+  font-size: 1.1rem;
+  margin-top: 10px;
+}
+
+.form-note {
+  font-size: 0.9rem;
+  color: #999;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.success-message {
+  text-align: center;
+  padding: 40px;
+  background: rgba(0, 255, 0, 0.1);
+  border: 2px solid rgba(0, 255, 0, 0.3);
+  border-radius: 12px;
+}
+
+.success-message h3 {
+  color: #4caf50;
+  margin-bottom: 15px;
+  font-size: 1.5rem;
+}
+
+.success-message p {
+  color: #ccc;
+  line-height: 1.6;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .event-title {
+    font-size: 2.5rem;
+  }
+  
+  .event-details {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+  
+  .registration-section {
+    padding: 30px 20px;
+  }
+  
+  .technical-saloon-section {
+    padding: 120px 15px 40px;
+  }
+}
+
+/* Animation classes */
+.animate-fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+.delay-1 {
+  animation-delay: 0.2s;
+}
+
+.delay-2 {
+  animation-delay: 0.4s;
+}
+
+.delay-3 {
+  animation-delay: 0.6s;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

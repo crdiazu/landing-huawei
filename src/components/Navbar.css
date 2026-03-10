@@ -1,0 +1,150 @@
+/* Navbar CSS */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px 0;
+  transition: all 0.3s ease;
+  z-index: 1000;
+  background-color: transparent;
+  color: var(--huawei-white);
+}
+
+.navbar.scrolled {
+  background-color: var(--huawei-white);
+  color: var(--huawei-black);
+  padding: 15px 0;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.nav-logos {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.logo-huawei-img {
+  height: 28px;
+  width: auto;
+  display: block;
+}
+
+.logo {
+  font-weight: 800;
+  font-size: 1.2rem;
+  letter-spacing: -0.5px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.logo-huawei {
+  color: var(--huawei-red);
+  letter-spacing: 0.08em;
+  font-weight: 800;
+}
+
+.icon-huawei {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  background:
+    radial-gradient(circle at 30% 15%, #ffd9d9 0%, #ff8a8a 25%, transparent 55%),
+    radial-gradient(circle at 50% 80%, #ff001f 0%, #b00012 55%, #5a0008 100%);
+  mask: radial-gradient(circle, white 100%, black 100%);
+  -webkit-mask: radial-gradient(circle, white 100%, black 100%);
+  border-radius: 50%;
+  box-shadow: 0 0 12px rgba(230, 0, 18, 0.65);
+}
+
+.logo-aistana {
+  font-family: 'Cinzel', serif;
+  font-weight: 700;
+  color: inherit;
+}
+
+.navbar.scrolled .logo-aistana {
+  color: var(--huawei-dark-gray);
+}
+
+.divider {
+  width: 1px;
+  height: 24px;
+  background-color: rgba(255,255,255,0.3);
+}
+
+.navbar.scrolled .divider {
+  background-color: rgba(0,0,0,0.2);
+}
+
+.desktop-menu {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.nav-link {
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: var(--huawei-red);
+}
+
+.nav-btn {
+  padding: 8px 20px;
+  font-size: 0.85rem;
+}
+
+.mobile-menu-btn {
+  display: none;
+  cursor: pointer;
+}
+
+.mobile-menu {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .desktop-menu {
+    display: none;
+  }
+  
+  .mobile-menu-btn {
+    display: block;
+  }
+
+  .mobile-menu {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: var(--huawei-white);
+    color: var(--huawei-black);
+    padding: 20px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  }
+
+  .mobile-nav-link {
+    padding: 15px 0;
+    border-bottom: 1px solid var(--huawei-light-gray);
+    font-weight: 600;
+  }
+
+  .mobile-nav-btn {
+    margin-top: 20px;
+    text-align: center;
+  }
+}

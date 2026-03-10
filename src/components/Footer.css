@@ -1,0 +1,129 @@
+/* src/components/Footer.css */
+.footer-section {
+  background-color: var(--huawei-black);
+  color: var(--huawei-white);
+  padding: 80px 20px 20px 20px;
+  border-top: 5px solid var(--huawei-red);
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 60px;
+  margin-bottom: 60px;
+}
+
+.footer-logos {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.footer-logo-aistana-img {
+  height: 65px;
+  width: auto;
+  object-fit: contain;
+}
+
+.footer-divider {
+  color: #555;
+}
+
+.footer-brand.huawei {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #AAAAAA;
+}
+
+.footer-desc {
+  color: #999999;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  max-width: 400px;
+  margin-bottom: 30px;
+}
+
+.social-links {
+  display: flex;
+  gap: 15px;
+}
+
+.social-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background-color: rgba(255,255,255,0.05);
+  border-radius: 50%;
+  color: var(--huawei-white);
+  transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+  background-color: var(--huawei-red);
+  transform: translateY(-3px);
+}
+
+.footer-title {
+  font-size: 1.1rem;
+  margin-bottom: 25px;
+  position: relative;
+  padding-bottom: 10px;
+}
+
+.footer-title::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 30px;
+  height: 2px;
+  background-color: var(--huawei-red);
+}
+
+.contact-info li {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  margin-bottom: 20px;
+  color: #CCCCCC;
+  font-size: 0.95rem;
+}
+
+.contact-icon {
+  color: var(--huawei-red);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.quick-links li {
+  margin-bottom: 15px;
+}
+
+.quick-links a {
+  color: #CCCCCC;
+  font-size: 0.95rem;
+  transition: color 0.3s ease;
+}
+
+.quick-links a:hover {
+  color: var(--huawei-white);
+  padding-left: 5px;
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.1);
+  padding-top: 20px;
+  text-align: center;
+  color: #777777;
+  font-size: 0.85rem;
+}
+
+@media (max-width: 900px) {
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
