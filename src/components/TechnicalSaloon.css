@@ -3,12 +3,49 @@
   position: relative;
   min-height: 100vh;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   background-color: var(--huawei-black);
   color: var(--huawei-white);
   overflow: hidden;
-  padding: 140px 20px 60px;
+  padding: 0 0 60px;
+}
+
+.brand-header-white {
+  width: 100%;
+  background-color: white;
+  padding: 20px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 60px;
+  z-index: 10;
+}
+
+.brand-header-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+}
+
+.brand-logo-huawei-vertical {
+  height: 80px;
+  width: auto;
+  display: block;
+}
+
+.brand-logo-aistana {
+  height: 60px; /* Adjusted to balance with Huawei vertical logo */
+  width: auto;
+  display: block;
+}
+
+.brand-divider {
+  width: 1px;
+  height: 60px;
+  background-color: #ddd;
 }
 
 .technical-saloon-bg {
