@@ -22,33 +22,11 @@
 }
 
 .technical-saloon-glow {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 800px;
-  height: 800px;
-  background:
-    radial-gradient(circle at 20% 20%, rgba(255,255,255,0.55) 0%, rgba(255,255,255,0) 55%),
-    radial-gradient(circle at 80% 80%, rgba(0,123,255,0.55) 0%, rgba(0,123,255,0) 60%);
-  z-index: 1;
-  filter: blur(8px);
-  opacity: 0.9;
+  display: none;
 }
 
 .technical-saloon-particles {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: 
-    radial-gradient(rgba(255,255,255,0.1) 1px, transparent 1px),
-    radial-gradient(rgba(255,255,255,0.05) 1px, transparent 1px);
-  background-size: 50px 50px, 100px 100px;
-  background-position: 0 0, 25px 25px;
-  z-index: 1;
-  opacity: 0.5;
+  display: none;
 }
 
 .technical-saloon-content {
