@@ -28,49 +28,38 @@ const TechnicalSaloon = () => {
     setIsLoading(true);
     setErrorMessage('');
     
+    // Simulate API call delay slightly for UX
+    await new Promise(resolve => setTimeout(resolve, 800));
+
     try {
-      const response = await fetch('/api/submit-form', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
-      });
+      // Direct WhatsApp Redirect - skipping backend email
+      setIsSubmitted(true);
       
-      const data = await response.json();
+      const phoneNumber = '56932924865';
+      const message = `Hola, me acabo de registrar en el Technical Saloon Huawei.\n\nMis datos:\nNombre: ${formData.name}\nEmpresa: ${formData.company}\nEmail: ${formData.email}\nTeléfono: ${formData.phone}\nCargo: ${formData.position}`;
+      const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+      
+      // Open WhatsApp in a new tab
+      setTimeout(() => {
+        window.open(whatsappUrl, '_blank');
+      }, 1000);
 
-      if (response.ok) {
-        setIsSubmitted(true);
-        
-        // WhatsApp Redirect
-        const phoneNumber = '56932924865';
-        const message = `Hola, me acabo de registrar en el Technical Saloon Huawei.\n\nMis datos:\nNombre: ${formData.name}\nEmpresa: ${formData.company}\nEmail: ${formData.email}`;
-        const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
-        
-        // Open WhatsApp in a new tab after a short delay to show success message
-        setTimeout(() => {
-          window.open(whatsappUrl, '_blank');
-        }, 1500);
-
-        // Reset form after successful submission
-        setTimeout(() => {
-          setFormData({
-            name: '',
-            email: '',
-            company: '',
-            phone: '',
-            position: '',
-            honeypot: ''
-          });
-          setIsSubmitted(false);
-        }, 5000);
-      } else {
-        throw new Error(data.error || 'Error en el servidor');
-      }
+      // Reset form
+      setTimeout(() => {
+        setFormData({
+          name: '',
+          email: '',
+          company: '',
+          phone: '',
+          position: '',
+          honeypot: ''
+        });
+        setIsSubmitted(false);
+      }, 4000);
       
     } catch (error) {
       console.error('Error submitting form:', error);
-      setErrorMessage('Hubo un problema al enviar tu registro. Por favor, intenta nuevamente o contáctanos directamente.');
+      setErrorMessage('Hubo un problema. Intenta contactarnos por WhatsApp directamente.');
     } finally {
       setIsLoading(false);
     }
