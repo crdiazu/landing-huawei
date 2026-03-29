@@ -287,10 +287,10 @@ main {
 .hero {
   position: relative;
   background-color: var(--huawei-black);
-  background-image: url('/fondo1 .png');
+  background-image: url('/02.jpg');
   background-size: cover;
   background-position: center;
-  min-height: 85vh;
+  min-height: 70vh;
   display: flex;
   align-items: center;
   padding-top: 80px; /* Offset for navbar */
@@ -300,7 +300,7 @@ main {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, rgba(0,0,0,0.85) 0%, rgba(74, 124, 89, 0.4) 100%);
+  background: linear-gradient(135deg, rgba(0,0,0,0.95) 0%, rgba(0, 0, 0, 0.7) 100%);
   z-index: 1;
 }
 
@@ -352,6 +352,17 @@ main {
   gap: 15px;
 }
 
+.custom-carousel-container {
+  display: grid;
+  grid-template-columns: 1fr 80px;
+}
+
+.custom-carousel-thumbnails {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
 .tape-accent-hero {
   position: absolute;
   left: 0;
@@ -399,5 +410,20 @@ main {
   }
   .footer-grid {
       grid-template-columns: 1fr;
+  }
+  
+  .custom-carousel-container {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr auto;
+  }
+  
+  .custom-carousel-thumbnails {
+    flex-direction: row;
+    overflow-x: auto;
+  }
+  
+  .custom-carousel-thumbnails img {
+    width: 60px !important;
+    flex-shrink: 0;
   }
 }

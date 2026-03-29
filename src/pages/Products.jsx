@@ -1,8 +1,11 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import { motion } from 'framer-motion';
+import ParallaxBackground from '../components/ParallaxBackground';
+import { useIntersectionObserver } from '../hooks/useIntersectionObserver';
 
 const Products = () => {
+  useIntersectionObserver();
   const products = [
     {
       title: "Huawei IdeaHub S3",
@@ -65,31 +68,43 @@ const Products = () => {
   ];
 
   return (
-    <div style={{ padding: '120px 5%', minHeight: '80vh', backgroundColor: '#F5F5F5' }}>
-      <Helmet>
-        <title>Catálogo de Pantallas Huawei IdeaHub | Aistana</title>
-        <meta name="description" content="Descubre la línea completa de pantallas interactivas Huawei IdeaHub S2, B2 y Board 2. Compra y arriendo en Chile." />
-      </Helmet>
-      
-      <div className="section-header" style={{ textAlign: 'center', marginBottom: '60px' }}>
-        <h1 style={{ fontSize: '3rem', color: '#000', marginBottom: '20px' }}>Monitores y Pantallas Interactivas</h1>
-        <p style={{ fontSize: '1.2rem', color: '#666', maxWidth: '700px', margin: '0 auto' }}>
-          Descubre la línea completa de pantallas de colaboración inteligente de Huawei, diseñadas para potenciar tu productividad.
-        </p>
-      </div>
+    <div className="parallax-section" style={{ minHeight: '80vh', position: 'relative' }}>
+      <ParallaxBackground 
+        webpSrc="/bg_images/idea-hub.webp" 
+        fallbackSrc="/bg_images/idea-hub.jpg" 
+        overlayColor="rgba(245, 245, 245, 0.9)"
+      />
+      <div className="parallax-content" style={{ padding: '120px 5%' }}>
+        <Helmet>
+          <title>Catálogo de Pantallas Huawei IdeaHub | Aistana</title>
+          <meta name="description" content="Descubre la línea completa de pantallas interactivas Huawei IdeaHub S2, B2 y Board 2. Compra y arriendo en Chile." />
+        </Helmet>
+        
+        <div className="section-header" style={{ textAlign: 'center', marginBottom: '60px' }}>
+          <h1 className="huawei-brand-font" style={{ fontSize: '3.6rem', color: '#000', marginBottom: '20px' }}>Monitores y Pantallas Interactivas</h1>
+          <p style={{ fontSize: '1.4rem', color: '#666', maxWidth: '700px', margin: '0 auto' }}>
+            Descubre la línea completa de pantallas de colaboración inteligente de Huawei, diseñadas para potenciar tu productividad.
+          </p>
+        </div>
 
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))', gap: '40px', maxWidth: '1200px', margin: '0 auto' }}>
-        {products.map((product, index) => (
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))', gap: '40px', maxWidth: '1200px', margin: '0 auto' }}>
+        {products.map((product, index) => {
+          // Usa variante densa para accesorios y OPS, espaciosa para los demás
+          const isAccessory = product.category === 'Accesorios' || product.category === 'OPS (Operaciones)';
+          const cardClass = isAccessory ? 'card-variant-dense' : 'card-variant-spacious';
+          
+          return (
           <motion.div 
             key={index}
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: index * 0.2 }}
-            style={{ backgroundColor: '#fff', borderRadius: '12px', overflow: 'hidden', boxShadow: '0 10px 30px rgba(0,0,0,0.05)', display: 'flex', flexDirection: 'column' }}
+            className={cardClass}
+            style={{ display: 'flex', flexDirection: 'column' }}
           >
             {product.pdf ? (
               <a href={product.pdf} target="_blank" rel="noopener noreferrer" style={{ display: 'block', textDecoration: 'none' }}>
-                <div style={{ height: '250px', backgroundColor: '#eaeaea', display: 'flex', alignItems: 'center', justifyContent: 'center', position: 'relative', overflow: 'hidden' }}>
+                <div style={{ height: '250px', backgroundColor: '#eaeaea', display: 'flex', alignItems: 'center', justifyContent: 'center', position: 'relative', overflow: 'hidden', borderRadius: '8px' }}>
                   {product.image ? (
                     <img src={product.image} alt={product.title} style={{ width: '100%', height: '100%', objectFit: 'cover', transition: 'transform 0.3s' }} className="product-image-hover" />
                   ) : (
@@ -97,13 +112,13 @@ const Products = () => {
                       Imagen pendiente
                     </div>
                   )}
-                  <div style={{ position: 'absolute', top: '15px', right: '15px', backgroundColor: 'rgba(255,255,255,0.9)', padding: '5px 10px', borderRadius: '4px', fontSize: '0.8rem', fontWeight: 'bold', color: '#4A7C59', display: 'flex', alignItems: 'center', gap: '5px' }}>
+                  <div style={{ position: 'absolute', top: '15px', right: '15px', backgroundColor: 'rgba(255,255,255,0.9)', padding: '5px 10px', borderRadius: '4px', fontSize: '0.8rem', fontWeight: 'bold', color: '#E60012', display: 'flex', alignItems: 'center', gap: '5px' }}>
                     <i className="fa-solid fa-file-pdf"></i> Ver Datasheet
                   </div>
                 </div>
               </a>
             ) : (
-              <div style={{ height: '250px', backgroundColor: '#eaeaea', display: 'flex', alignItems: 'center', justifyContent: 'center', position: 'relative', overflow: 'hidden' }}>
+              <div style={{ height: '250px', backgroundColor: '#eaeaea', display: 'flex', alignItems: 'center', justifyContent: 'center', position: 'relative', overflow: 'hidden', borderRadius: '8px' }}>
                 {product.image ? (
                   <img src={product.image} alt={product.title} style={{ width: '100%', height: '100%', objectFit: 'cover', transition: 'transform 0.3s' }} className="product-image-hover" />
                 ) : (
@@ -116,25 +131,26 @@ const Products = () => {
                 </div>
               </div>
             )}
-            <div style={{ padding: '30px', flex: 1, display: 'flex', flexDirection: 'column' }}>
+            <div style={{ padding: isAccessory ? '15px 0 0 0' : '20px 0 0 0', flex: 1, display: 'flex', flexDirection: 'column' }}>
               <span style={{ color: '#4A7C59', fontSize: '0.9rem', fontWeight: 'bold', textTransform: 'uppercase' }}>{product.category}</span>
-              <h3 style={{ fontSize: '1.5rem', margin: '10px 0', color: '#333' }}>{product.title}</h3>
-              <p style={{ color: '#666', marginBottom: '20px', fontSize: '0.95rem', lineHeight: '1.6' }}>{product.desc}</p>
+              <h3 className="huawei-brand-font" style={{ fontSize: '1.8rem', margin: '10px 0', color: '#333' }}>{product.title}</h3>
+              <p style={{ color: '#666', marginBottom: '20px', fontSize: '1rem', lineHeight: '1.6' }}>{product.desc}</p>
               <ul style={{ listStyle: 'none', padding: 0, marginBottom: '30px', flex: 1 }}>
                 {product.features.map((f, i) => (
                   <li key={i} style={{ color: '#444', marginBottom: '10px', fontSize: '0.9rem', display: 'flex', alignItems: 'flex-start', gap: '10px' }}>
-                    <i className="fa-solid fa-check" style={{ color: '#4A7C59', marginTop: '3px' }}></i> 
+                    <i className="fa-solid fa-check" style={{ color: '#E60012', marginTop: '3px' }}></i> 
                     <span>{f}</span>
                   </li>
                 ))}
               </ul>
               <div style={{ display: 'flex', gap: '10px', marginTop: 'auto' }}>
-                <a href="/contacto" className="btn-primary" style={{ flex: 1, textAlign: 'center', padding: '12px 10px', backgroundColor: '#4A7C59', color: 'white', textDecoration: 'none', borderRadius: '6px', fontWeight: 'bold', fontSize: '0.9rem', transition: 'all 0.3s' }}>Cotizar Venta</a>
+                <a href="/contacto" className="btn-primary" style={{ flex: 1, textAlign: 'center', padding: '12px 10px', backgroundColor: '#E60012', border: '2px solid #E60012', color: 'white', textDecoration: 'none', borderRadius: '6px', fontWeight: 'bold', fontSize: '0.9rem', transition: 'all 0.3s' }}>Cotizar Venta</a>
                 <a href="/contacto" className="btn-secondary" style={{ flex: 1, textAlign: 'center', padding: '12px 10px', backgroundColor: 'transparent', color: '#4A7C59', border: '2px solid #4A7C59', textDecoration: 'none', borderRadius: '6px', fontWeight: 'bold', fontSize: '0.9rem', transition: 'all 0.3s' }}>Cotizar Arriendo</a>
               </div>
             </div>
           </motion.div>
-        ))}
+        )})}
+      </div>
       </div>
     </div>
   );
