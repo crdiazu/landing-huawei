@@ -1,16 +1,34 @@
-# React + Vite
+# Documentación Técnica: Proyecto Aistana Huawei Displays
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Arquitectura y Stack Tecnológico
+Dado el requerimiento de entrega urgente, se ha elegido el siguiente stack optimizado para velocidad de desarrollo y rendimiento en producción:
 
-Currently, two official plugins are available:
+- **Frontend Framework:** React 19 con Vite (extremadamente rápido para build y dev).
+- **Enrutamiento:** React Router DOM v7 (para navegación SPA sin recargar la página).
+- **SEO & Meta Tags:** React Helmet Async (manejo dinámico del `<head>` para SEO en cada página).
+- **Animaciones:** Framer Motion (para transiciones fluidas y modernas tipo "Huawei").
+- **Estilos:** CSS Modules y Tailwind CSS (configurado como base).
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Estructura de Rutas
+El sitio está dividido en múltiples páginas enfocadas a la conversión B2B:
+- `/`: Landing principal (Venta y distribución).
+- `/arriendo`: Campaña específica para arriendo de pantallas (OPEX).
+- `/integradores`: Campaña de captación de partners.
+- `/nosotros`: Información corporativa.
+- `/productos`: Catálogo IdeaHub (S2, B2, Board 2).
+- `/contacto`: Formulario integrado con WhatsApp.
+- `/soporte-tecnico`: Portal de ayuda y servicios.
+- `/faq`: Preguntas frecuentes (ideal para Schema Markup FAQPage futuro).
 
-## React Compiler
+## Optimización SEO y Performance implementada
+- Cada página cuenta con su propia etiqueta `<title>` y `<meta name="description">` enfocadas en las palabras clave del negocio B2B.
+- Se ha estructurado semánticamente con `H1`, `H2` y `H3`.
+- Las imágenes principales están servidas estáticamente desde `public/`.
+- `vercel.json` configurado con reglas de rewrite para soportar el enrutamiento de React (SPA) en producción.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Instrucciones de Despliegue (Deployment)
+1. Inicia sesión en GitHub.
+2. Sube el código fuente de esta carpeta (`aistana-huawei-displays`).
+3. Conecta el repositorio a Vercel.
+4. Vercel detectará automáticamente que es un proyecto Vite y aplicará el comando `npm run build`.
+5. El archivo `vercel.json` se encargará de que las rutas funcionen correctamente sin errores 404.
