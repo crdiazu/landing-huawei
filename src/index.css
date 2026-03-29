@@ -113,3 +113,62 @@ body {
   position: relative;
   z-index: 10;
 }
+
+/* Subpages Background Styles */
+.subpage-container {
+  position: relative;
+  min-height: 80vh;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-color: #F5F5F5; /* Fallback de color sólido */
+}
+
+.subpage-overlay {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  z-index: 1;
+}
+
+.subpage-content {
+  position: relative;
+  z-index: 2;
+  padding: 120px 5% 80px;
+}
+
+/* Background Image Classes with WebP Support */
+.bg-about {
+  background-image: url("/bg_images/idea_share.jpg");
+}
+@supports (background-image: url("/bg_images/idea_share.webp")) {
+  .bg-about {
+    background-image: url("/bg_images/idea_share.webp");
+  }
+}
+
+.bg-rent {
+  background-image: url("/bg_images/ideahub-1.jpg");
+}
+@supports (background-image: url("/bg_images/ideahub-1.webp")) {
+  .bg-rent {
+    background-image: url("/bg_images/ideahub-1.webp");
+  }
+}
+
+.bg-integrators {
+  background-image: url("/bg_images/huawei-ideahub-1-e1612982413831-780x405.jpg");
+}
+@supports (background-image: url("/bg_images/huawei-ideahub-1-e1612982413831-780x405.webp")) {
+  .bg-integrators {
+    background-image: url("/bg_images/huawei-ideahub-1-e1612982413831-780x405.webp");
+  }
+}
+
+.bg-products {
+  background-image: url("/bg_images/idea-hub.jpg");
+}
+@supports (background-image: url("/bg_images/idea-hub.webp")) {
+  .bg-products {
+    background-image: url("/bg_images/idea-hub.webp");
+  }
+}

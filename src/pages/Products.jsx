@@ -1,11 +1,8 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import { motion } from 'framer-motion';
-import ParallaxBackground from '../components/ParallaxBackground';
-import { useIntersectionObserver } from '../hooks/useIntersectionObserver';
 
 const Products = () => {
-  useIntersectionObserver();
   const products = [
     {
       title: "Huawei IdeaHub S3",
@@ -68,13 +65,9 @@ const Products = () => {
   ];
 
   return (
-    <div className="parallax-section" style={{ minHeight: '80vh', position: 'relative' }}>
-      <ParallaxBackground 
-        webpSrc="/bg_images/idea-hub.webp" 
-        fallbackSrc="/bg_images/idea-hub.jpg" 
-        overlayColor="rgba(245, 245, 245, 0.9)"
-      />
-      <div className="parallax-content" style={{ padding: '120px 5%' }}>
+    <div className="subpage-container bg-products">
+      <div className="subpage-overlay" style={{ backgroundColor: 'rgba(245, 245, 245, 0.92)' }}></div>
+      <div className="subpage-content">
         <Helmet>
           <title>Catálogo de Pantallas Huawei IdeaHub | Aistana</title>
           <meta name="description" content="Descubre la línea completa de pantallas interactivas Huawei IdeaHub S2, B2 y Board 2. Compra y arriendo en Chile." />
