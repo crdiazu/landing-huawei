@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
-import { motion } from 'framer-motion';
+import { motion as Motion } from 'framer-motion';
+import { Calendar, Handshake, Users } from 'lucide-react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Pagination, Navigation } from 'swiper/modules';
 import ParallaxBackground from '../components/ParallaxBackground';
@@ -72,7 +73,7 @@ const Home = () => {
           <div className="hero-pattern"></div>
           <div className="tape-accent-hero" style={{ backgroundColor: '#E60012' }}></div>
           <div className="hero-content">
-              <motion.div 
+              <Motion.div 
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8 }}
@@ -80,12 +81,12 @@ const Home = () => {
               >
                   <div className="tag" style={{ background: 'rgba(230, 0, 18, 0.2)', color: 'white', border: '1px solid rgba(230, 0, 18, 0.5)' }}>Canal oficial eKIT HUAWEI</div>
                   <h1 className="huawei-brand-font" style={{ fontSize: '4.2rem' }}>Colaboración Inteligente con <span style={{ color: '#E60012' }}>Huawei IdeaHub</span></h1>
-                  <p style={{ fontSize: '1.4rem' }}>Transforma tus salas de reuniones y cartelería digital con los monitores profesionales y pantallas interactivas de próxima generación. Cotiza con expertos de AISTANA.</p>
+                  <p style={{ fontSize: '1.4rem' }}>Transforma los espacios colaborativos de tus clientes con pantallas interactivas de última generación. Cotiza con expertos de AISTANA.</p>
                   <div className="hero-buttons">
                       <a href="/productos" className="btn-primary" style={{ backgroundColor: '#E60012', borderColor: '#E60012' }}>Ver Productos</a>
-                      <a href="/contacto" className="btn-secondary" style={{ borderColor: '#4A7C59', backgroundColor: '#4A7C59', color: '#FFFFFF' }}>Hablar con un Asesor</a>
+                      <a href="mailto:ventas@aistana.cl" className="btn-secondary" style={{ borderColor: '#4A7C59', backgroundColor: '#4A7C59', color: '#FFFFFF' }}>Hablar con un Asesor</a>
                   </div>
-              </motion.div>
+              </Motion.div>
           </div>
         </section>
       </div>
@@ -107,39 +108,39 @@ const Home = () => {
           <div className="section-header">
               <h2 className="huawei-brand-font" style={{ fontSize: '3.2rem', fontWeight: 800, textAlign: 'center', marginBottom: '20px', color: '#1A1A1A' }}>Soluciones B2B Integrales</h2>
               <p style={{ textAlign: 'center', color: '#444', maxWidth: '800px', margin: '0 auto 40px', fontSize: '1.4rem', textShadow: '0 1px 2px rgba(255,255,255,0.8)' }}>
-                En Aistana, transformamos espacios de trabajo y aulas con tecnología de vanguardia. 
-                Nuestras soluciones están diseñadas para maximizar la colaboración y productividad.
+                En Aistana, te apoyamos a transformar espacios de trabajo y aulas con tecnología de vanguardia. 
+                Nuestros productos y soluciones están diseñados para maximizar la colaboración y productividad de tus clientes.
               </p>
               <div style={{ width: '60px', height: '4px', backgroundColor: '#E60012', margin: '0 auto 60px' }}></div>
           </div>
           
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '30px', maxWidth: '1200px', margin: '0 auto' }}>
-              <motion.div whileHover={{ y: -10 }} className="feature-card" style={{ padding: '20px 24px', border: '1px solid rgba(255,255,255,0.5)', borderTop: '4px solid #E60012', borderRadius: '16px', textAlign: 'center', backgroundColor: 'rgba(255, 255, 255, 0.95)', boxShadow: '0 15px 35px rgba(0,0,0,0.1)', backdropFilter: 'blur(10px)' }}>
+              <Motion.div whileHover={{ y: -10 }} className="feature-card" style={{ padding: '20px 24px', border: '1px solid rgba(255,255,255,0.5)', borderTop: '4px solid #E60012', borderRadius: '16px', textAlign: 'center', backgroundColor: 'rgba(255, 255, 255, 0.95)', boxShadow: '0 15px 35px rgba(0,0,0,0.1)', backdropFilter: 'blur(10px)', display: 'flex', flexDirection: 'column', height: '100%' }}>
                   <div style={{ width: '80px', height: '80px', borderRadius: '50%', backgroundColor: 'rgba(230, 0, 18, 0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 20px' }}>
-                      <i className="fa-solid fa-handshake" style={{ color: '#E60012', fontSize: '2rem' }}></i>
+                      <Calendar size={34} color="#4A7C59" strokeWidth={2} />
                   </div>
                   <h3 className="huawei-brand-font" style={{ fontSize: '2rem', color: '#333', marginBottom: '15px' }}>Arriendo de Pantallas</h3>
                   <p style={{ color: '#555', lineHeight: '1.6' }}>Planes flexibles de arriendo mensual para empresas y eventos. Equipamiento de última generación siempre actualizado con soporte y mantenimiento preventivo incluido. Ideal para optimizar tu flujo de caja (OPEX).</p>
-                  <a href="/arriendo" style={{ display: 'inline-block', marginTop: '25px', fontWeight: 'bold', color: '#4A7C59', textDecoration: 'none', padding: '10px 20px', border: '2px solid #4A7C59', borderRadius: '6px', transition: 'all 0.3s' }}>Conocer más →</a>
-              </motion.div>
+                  <a href="/arriendo" style={{ display: 'inline-block', marginTop: 'auto', fontWeight: 'bold', color: '#4A7C59', textDecoration: 'none', padding: '10px 20px', border: '2px solid #4A7C59', borderRadius: '6px', transition: 'all 0.3s' }}>Conocer más →</a>
+              </Motion.div>
 
-              <motion.div whileHover={{ y: -10 }} className="feature-card" style={{ padding: '20px 24px', border: '1px solid rgba(255,255,255,0.5)', borderTop: '4px solid #E60012', borderRadius: '16px', textAlign: 'center', backgroundColor: 'rgba(255, 255, 255, 0.95)', boxShadow: '0 15px 35px rgba(0,0,0,0.1)', backdropFilter: 'blur(10px)' }}>
+              <Motion.div whileHover={{ y: -10 }} className="feature-card" style={{ padding: '20px 24px', border: '1px solid rgba(255,255,255,0.5)', borderTop: '4px solid #E60012', borderRadius: '16px', textAlign: 'center', backgroundColor: 'rgba(255, 255, 255, 0.95)', boxShadow: '0 15px 35px rgba(0,0,0,0.1)', backdropFilter: 'blur(10px)', display: 'flex', flexDirection: 'column', height: '100%' }}>
                   <div style={{ width: '80px', height: '80px', borderRadius: '50%', backgroundColor: 'rgba(230, 0, 18, 0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 20px' }}>
-                      <i className="fa-solid fa-network-wired" style={{ color: '#E60012', fontSize: '2rem' }}></i>
+                      <Handshake size={34} color="#4A7C59" strokeWidth={2} />
                   </div>
                   <h3 className="huawei-brand-font" style={{ fontSize: '2rem', color: '#333', marginBottom: '15px' }}>Para Integradores</h3>
                   <p style={{ color: '#555', lineHeight: '1.6' }}>Programa exclusivo para partners tecnológicos. Accede a precios preferenciales, protección de proyectos, stock local garantizado, demos disponibles y acompañamiento técnico especializado en preventa y postventa.</p>
-                  <a href="/integradores" style={{ display: 'inline-block', marginTop: '25px', fontWeight: 'bold', color: '#4A7C59', textDecoration: 'none', padding: '10px 20px', border: '2px solid #4A7C59', borderRadius: '6px', transition: 'all 0.3s' }}>Área de Partners →</a>
-              </motion.div>
+                  <a href="/integradores" style={{ display: 'inline-block', marginTop: 'auto', fontWeight: 'bold', color: '#4A7C59', textDecoration: 'none', padding: '10px 20px', border: '2px solid #4A7C59', borderRadius: '6px', transition: 'all 0.3s' }}>Conocer más →</a>
+              </Motion.div>
               
-              <motion.div whileHover={{ y: -10 }} className="feature-card" style={{ padding: '20px 24px', border: '1px solid rgba(255,255,255,0.5)', borderTop: '4px solid #E60012', borderRadius: '16px', textAlign: 'center', backgroundColor: 'rgba(255, 255, 255, 0.95)', boxShadow: '0 15px 35px rgba(0,0,0,0.1)', backdropFilter: 'blur(10px)' }}>
+              <Motion.div whileHover={{ y: -10 }} className="feature-card" style={{ padding: '20px 24px', border: '1px solid rgba(255,255,255,0.5)', borderTop: '4px solid #E60012', borderRadius: '16px', textAlign: 'center', backgroundColor: 'rgba(255, 255, 255, 0.95)', boxShadow: '0 15px 35px rgba(0,0,0,0.1)', backdropFilter: 'blur(10px)', display: 'flex', flexDirection: 'column', height: '100%' }}>
                   <div style={{ width: '80px', height: '80px', borderRadius: '50%', backgroundColor: 'rgba(230, 0, 18, 0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 20px' }}>
-                      <i className="fa-solid fa-chalkboard-user" style={{ color: '#E60012', fontSize: '2rem' }}></i>
+                      <Users size={34} color="#4A7C59" strokeWidth={2} />
                   </div>
-                  <h3 className="huawei-brand-font" style={{ fontSize: '2rem', color: '#333', marginBottom: '15px' }}>Venta Directa Corporativa</h3>
-                  <p style={{ color: '#555', lineHeight: '1.6' }}>Equipa tus salas de directorio y espacios educativos con la línea completa IdeaHub. Asesoría experta para elegir el tamaño y modelo adecuado, con instalación profesional y capacitación para tus usuarios.</p>
-                  <a href="/productos" style={{ display: 'inline-block', marginTop: '25px', fontWeight: 'bold', color: '#E60012', textDecoration: 'none', padding: '10px 20px', border: '2px solid #E60012', borderRadius: '6px', transition: 'all 0.3s' }}>Ver Catálogo →</a>
-              </motion.div>
+                  <h3 className="huawei-brand-font" style={{ fontSize: '2rem', color: '#333', marginBottom: '15px' }}>Programa Resellers</h3>
+                  <p style={{ color: '#555', lineHeight: '1.6' }}>programa exclusivo para partners Elite DP. Accede a compra de stock y precios preferenciales para tu cadena de distribucion.</p>
+                  <a href="/productos" style={{ display: 'inline-block', marginTop: 'auto', fontWeight: 'bold', color: '#4A7C59', textDecoration: 'none', padding: '10px 20px', border: '2px solid #4A7C59', borderRadius: '6px', transition: 'all 0.3s' }}>Conocer más →</a>
+              </Motion.div>
           </div>
         </div>
       </section>
@@ -150,27 +151,27 @@ const Home = () => {
           <div style={{ flex: '1 1 500px' }}>
             <h2 className="huawei-brand-font" style={{ fontSize: '3.2rem', fontWeight: 800, color: '#333', marginBottom: '20px' }}>¿Qué es <span style={{ color: '#E60012' }}>Huawei IdeaHub</span>?</h2>
             <p style={{ fontSize: '1.3rem', color: '#666', lineHeight: '1.8', marginBottom: '20px' }}>
-              Huawei IdeaHub es un endpoint de productividad para la oficina inteligente que integra múltiples funciones en un solo dispositivo: pizarra interactiva, proyector inalámbrico, equipo de videoconferencia profesional y aplicaciones de oficina nativas.
+              Huawei IdeaHub es un endpoint que aumenta la productividad y eficiencia, para una oficina inteligente, que integra múltiples funciones en un solo dispositivo: Pizarra interactiva, equipo de videoconferencia profesional y aplicaciones de oficina modernas.
             </p>
             
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '30px', alignItems: 'flex-start' }}>
               <div style={{ flex: '1 1 300px' }}>
                 <ul style={{ listStyle: 'none', padding: 0, marginBottom: '30px' }}>
                   <li style={{ marginBottom: '15px', display: 'flex', alignItems: 'center', gap: '15px' }}>
-                    <div style={{ width: '40px', height: '40px', borderRadius: '50%', backgroundColor: '#4A7C59', color: 'white', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
-                      <i className="fa-solid fa-video"></i>
+                    <div style={{ width: '32px', height: '32px', borderRadius: '50%', backgroundColor: '#4A7C59', color: 'white', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                      <i className="fa-solid fa-video" style={{ fontSize: '0.9rem' }}></i>
                     </div>
                     <span style={{ fontSize: '1.1rem', color: '#444', fontWeight: '500' }}>Videoconferencias 4K con encuadre inteligente</span>
                   </li>
                   <li style={{ marginBottom: '15px', display: 'flex', alignItems: 'center', gap: '15px' }}>
-                    <div style={{ width: '40px', height: '40px', borderRadius: '50%', backgroundColor: '#4A7C59', color: 'white', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
-                      <i className="fa-solid fa-pen-nib"></i>
+                    <div style={{ width: '32px', height: '32px', borderRadius: '50%', backgroundColor: '#4A7C59', color: 'white', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                      <i className="fa-solid fa-pen-nib" style={{ fontSize: '0.9rem' }}></i>
                     </div>
                     <span style={{ fontSize: '1.1rem', color: '#444', fontWeight: '500' }}>Escritura natural con latencia ultra baja (16ms)</span>
                   </li>
                   <li style={{ marginBottom: '15px', display: 'flex', alignItems: 'center', gap: '15px' }}>
-                    <div style={{ width: '40px', height: '40px', borderRadius: '50%', backgroundColor: '#4A7C59', color: 'white', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
-                      <i className="fa-solid fa-wifi"></i>
+                    <div style={{ width: '32px', height: '32px', borderRadius: '50%', backgroundColor: '#4A7C59', color: 'white', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                      <i className="fa-solid fa-wifi" style={{ fontSize: '0.9rem' }}></i>
                     </div>
                     <span style={{ fontSize: '1.1rem', color: '#444', fontWeight: '500' }}>Proyección inalámbrica BYOM rápida y segura</span>
                   </li>
@@ -234,23 +235,22 @@ const Home = () => {
           fallbackSrc="/bg_images/fondo1_.png" 
           overlayColor="rgba(0,0,0,0.85)"
         />
-        <div className="parallax-content" style={{ maxWidth: '1200px', margin: '0 auto', display: 'flex', flexWrap: 'wrap', justifyContent: 'space-around', gap: '40px', textAlign: 'center' }}>
-          <motion.div initial={{ opacity: 0, scale: 0.8 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }}>
-            <h3 style={{ fontSize: '3.5rem', color: '#4A7C59', margin: '0 0 10px 0', fontWeight: '800' }}>+500</h3>
-            <p style={{ fontSize: '1.1rem', color: '#ccc' }}>Salas Equipadas</p>
-          </motion.div>
-          <motion.div initial={{ opacity: 0, scale: 0.8 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ delay: 0.1 }}>
-            <h3 style={{ fontSize: '3.5rem', color: '#4A7C59', margin: '0 0 10px 0', fontWeight: '800' }}>99%</h3>
-            <p style={{ fontSize: '1.1rem', color: '#ccc' }}>Satisfacción B2B</p>
-          </motion.div>
-          <motion.div initial={{ opacity: 0, scale: 0.8 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ delay: 0.2 }}>
-            <h3 style={{ fontSize: '3.5rem', color: '#4A7C59', margin: '0 0 10px 0', fontWeight: '800' }}>24/7</h3>
-            <p style={{ fontSize: '1.1rem', color: '#ccc' }}>Soporte Especializado</p>
-          </motion.div>
-          <motion.div initial={{ opacity: 0, scale: 0.8 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ delay: 0.3 }}>
-            <h3 style={{ fontSize: '3.5rem', color: '#4A7C59', margin: '0 0 10px 0', fontWeight: '800' }}>Socio</h3>
-            <p style={{ fontSize: '1.1rem', color: '#ccc' }}>Experto Huawei eKit</p>
-          </motion.div>
+        <div className="parallax-content" style={{ maxWidth: '1200px', margin: '0 auto', textAlign: 'center' }}>
+          <Motion.div initial={{ opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
+            <h1 className="huawei-brand-font" style={{ fontSize: '3.4rem', color: '#4A7C59', margin: 0, fontWeight: 800, lineHeight: 1.1 }}>
+              Ven a conocer más sobre nuestras pantallas interactivas
+            </h1>
+            <h3 className="huawei-brand-font" style={{ fontSize: '2rem', color: '#e4ffecff', margin: '16px 0 0', fontWeight: 700 }}>
+              Solicita una visita a nuestro Showroom, te esperamos! 
+            </h3>
+            <a
+              href="mailto:ventas@aistana.cl"
+              className="btn-primary huawei-brand-font"
+              style={{ display: 'inline-block', marginTop: '28px', backgroundColor: '#1F4E79', border: '2px solid #1F4E79', color: '#fff', padding: '12px 34px', borderRadius: '8px', textDecoration: 'none', fontSize: '1.1rem', fontWeight: 'bold' }}
+            >
+              Contáctenos
+            </a>
+          </Motion.div>
         </div>
       </section>
 
@@ -274,14 +274,14 @@ const Home = () => {
               { text: "El arriendo operativo nos permitió equipar 15 salas de clases sin afectar nuestro CAPEX. El soporte de Aistana ha sido impecable.", author: "Vicerrector, Institución Educativa" },
               { text: "Como integradores, trabajar con Aistana nos da la tranquilidad de contar con stock local y un respaldo técnico nivel experto de Huawei.", author: "Gerente General, Partner Tecnológico" }
             ].map((testimonial, i) => (
-              <motion.div key={i} style={{ flex: '0 0 350px', backgroundColor: '#F9F9F9', padding: '20px 24px', borderRadius: '16px', snapAlign: 'start', position: 'relative' }} whileHover={{ y: -5 }}>
+              <Motion.div key={i} style={{ flex: '0 0 350px', backgroundColor: '#F9F9F9', padding: '20px 24px', borderRadius: '16px', snapAlign: 'start', position: 'relative' }} whileHover={{ y: -5 }}>
                 <i className="fa-solid fa-quote-left" style={{ fontSize: '2rem', color: '#4A7C59', opacity: 0.2, position: 'absolute', top: '30px', left: '30px' }}></i>
                 <p style={{ fontSize: '1.1rem', color: '#444', lineHeight: '1.6', marginBottom: '30px', marginTop: '20px', position: 'relative', zIndex: 1 }}>"{testimonial.text}"</p>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '15px' }}>
                   <div style={{ width: '40px', height: '40px', borderRadius: '50%', backgroundColor: '#ddd' }}></div>
                   <span className="huawei-brand-font" style={{ color: '#333' }}>{testimonial.author}</span>
                 </div>
-              </motion.div>
+              </Motion.div>
             ))}
           </div>
         </div>
@@ -299,8 +299,8 @@ const Home = () => {
             <h3 className="huawei-brand-font" style={{ fontSize: '2.5rem', marginBottom: '20px' }}>Hablemos de tu proyecto</h3>
             <p style={{ marginBottom: '40px', lineHeight: '1.6', opacity: 0.9, fontSize: '1.1rem' }}>Un especialista en soluciones Huawei se pondrá en contacto contigo para asesorarte en la mejor opción para tu empresa.</p>
             <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
-              <li style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '20px' }}><i className="fa-solid fa-location-dot"></i> Rosario Norte 532 piso 17, Las Condes</li>
-              <li style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '20px' }}><i className="fa-solid fa-envelope"></i> ignacio@aistana.cl</li>
+              <li style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '20px' }}><i className="fa-solid fa-location-dot"></i> Avda Pedro de Valdivia 273, of 607, Providencia</li>
+              <li style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '20px' }}><i className="fa-solid fa-envelope"></i> <a href="mailto:ventas@aistana.cl" style={{ color: 'inherit', textDecoration: 'underline' }}>ventas@aistana.cl</a></li>
               <li style={{ display: 'flex', alignItems: 'center', gap: '15px' }}><i className="fa-brands fa-whatsapp"></i> +56 9 3292 4865</li>
             </ul>
           </div>

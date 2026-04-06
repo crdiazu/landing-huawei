@@ -48,13 +48,13 @@ const Layout = ({ children }) => {
       {/* Navbar */}
       <nav className="navbar" id="navbar">
         <div className="logos">
-            <Link to="/" className="logo-huawei">
-                <img src="/REFERENCIAS_HUAWEI/huaweilogo-new.png" alt="Huawei Logo" style={{ height: '30px', width: 'auto', display: 'block' }} loading="lazy" />
+            <Link to="/" className="logo-partner">
+                <img src="/logo.png" alt="AISTANA Logo" style={{ height: '38px', width: 'auto', display: 'block' }} loading="lazy" />
+                <span>AISTANA</span>
             </Link>
             <div className="logo-divider"></div>
-            <Link to="/" className="logo-partner">
-                <img src="/logo.png" alt="AISTANA Logo" style={{ height: '30px', width: 'auto', display: 'block' }} loading="lazy" />
-                <span>AISTANA</span>
+            <Link to="/" className="logo-huawei">
+                <img src="/REFERENCIAS_HUAWEI/huaweilogo-new.png" alt="Huawei Logo" style={{ height: '30px', width: 'auto', display: 'block' }} loading="lazy" />
             </Link>
         </div>
         

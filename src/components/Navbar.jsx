@@ -20,11 +20,11 @@ const Navbar = () => {
     <nav className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
       <div className="container nav-container">
         <div className="nav-logos">
+          <img src="/logo-aistana-full-nav.png" alt="AISTANA Logo" className="logo-aistana-img" />
+          <div className="divider"></div>
           <div className="logo logo-huawei">
             <img src="/huawei-logo.svg" alt="Huawei Logo" className="logo-huawei-img" />
           </div>
-          <div className="divider"></div>
-          <img src="/logo-aistana-full-nav.png" alt="AISTANA Logo" className="logo-aistana-img" />
         </div>
 
         <div className="desktop-menu">

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
-import { motion } from 'framer-motion';
+import { motion as Motion } from 'framer-motion';
 
 const Products = () => {
   const products = [
@@ -87,7 +87,7 @@ const Products = () => {
           const cardClass = isAccessory ? 'card-variant-dense' : 'card-variant-spacious';
           
           return (
-          <motion.div 
+          <Motion.div 
             key={index}
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -141,7 +141,7 @@ const Products = () => {
                 <a href="/contacto" className="btn-secondary" style={{ flex: 1, textAlign: 'center', padding: '12px 10px', backgroundColor: 'transparent', color: '#4A7C59', border: '2px solid #4A7C59', textDecoration: 'none', borderRadius: '6px', fontWeight: 'bold', fontSize: '0.9rem', transition: 'all 0.3s' }}>Cotizar Arriendo</a>
               </div>
             </div>
-          </motion.div>
+          </Motion.div>
         )})}
       </div>
       </div>

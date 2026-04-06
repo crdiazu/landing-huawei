@@ -28,7 +28,13 @@
 .nav-logos {
   display: flex;
   align-items: center;
-  gap: 15px;
+  gap: 10px;
+}
+
+.logo-aistana-img {
+  height: 35px;
+  width: auto;
+  display: block;
 }
 
 .logo-huawei-img {
