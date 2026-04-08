@@ -63,12 +63,12 @@
   width: 24px;
   height: 24px;
   background:
-    radial-gradient(circle at 30% 15%, #ffd9d9 0%, #ff8a8a 25%, transparent 55%),
-    radial-gradient(circle at 50% 80%, #ff001f 0%, #b00012 55%, #5a0008 100%);
+    radial-gradient(circle at 30% 15%, #d9ecff 0%, #6fb2ff 25%, transparent 55%),
+    radial-gradient(circle at 50% 80%, #1F4E79 0%, #12324f 55%, #081624 100%);
   mask: radial-gradient(circle, white 100%, black 100%);
   -webkit-mask: radial-gradient(circle, white 100%, black 100%);
   border-radius: 50%;
-  box-shadow: 0 0 12px rgba(230, 0, 18, 0.65);
+  box-shadow: 0 0 12px rgba(31, 78, 121, 0.55);
 }
 
 .logo-aistana {

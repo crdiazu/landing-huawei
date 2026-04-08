@@ -105,7 +105,7 @@ const Products = () => {
                       Imagen pendiente
                     </div>
                   )}
-                  <div style={{ position: 'absolute', top: '15px', right: '15px', backgroundColor: 'rgba(255,255,255,0.9)', padding: '5px 10px', borderRadius: '4px', fontSize: '0.8rem', fontWeight: 'bold', color: '#E60012', display: 'flex', alignItems: 'center', gap: '5px' }}>
+                  <div style={{ position: 'absolute', top: '15px', right: '15px', backgroundColor: 'rgba(255,255,255,0.9)', padding: '5px 10px', borderRadius: '4px', fontSize: '0.8rem', fontWeight: 'bold', color: '#1F4E79', display: 'flex', alignItems: 'center', gap: '5px' }}>
                     <i className="fa-solid fa-file-pdf"></i> Ver Datasheet
                   </div>
                 </div>
@@ -131,13 +131,13 @@ const Products = () => {
               <ul style={{ listStyle: 'none', padding: 0, marginBottom: '30px', flex: 1 }}>
                 {product.features.map((f, i) => (
                   <li key={i} style={{ color: '#444', marginBottom: '10px', fontSize: '0.9rem', display: 'flex', alignItems: 'flex-start', gap: '10px' }}>
-                    <i className="fa-solid fa-check" style={{ color: '#E60012', marginTop: '3px' }}></i> 
+                    <i className="fa-solid fa-check" style={{ color: '#4A7C59', marginTop: '3px' }}></i> 
                     <span>{f}</span>
                   </li>
                 ))}
               </ul>
               <div style={{ display: 'flex', gap: '10px', marginTop: 'auto' }}>
-                <a href="/contacto" className="btn-primary" style={{ flex: 1, textAlign: 'center', padding: '12px 10px', backgroundColor: '#E60012', border: '2px solid #E60012', color: 'white', textDecoration: 'none', borderRadius: '6px', fontWeight: 'bold', fontSize: '0.9rem', transition: 'all 0.3s' }}>Cotizar Venta</a>
+                <a href="/contacto" className="btn-primary" style={{ flex: 1, textAlign: 'center', padding: '12px 10px', backgroundColor: '#1F4E79', border: '2px solid #1F4E79', color: 'white', textDecoration: 'none', borderRadius: '6px', fontWeight: 'bold', fontSize: '0.9rem', transition: 'all 0.3s' }}>Cotizar Venta</a>
                 <a href="/contacto" className="btn-secondary" style={{ flex: 1, textAlign: 'center', padding: '12px 10px', backgroundColor: 'transparent', color: '#4A7C59', border: '2px solid #4A7C59', textDecoration: 'none', borderRadius: '6px', fontWeight: 'bold', fontSize: '0.9rem', transition: 'all 0.3s' }}>Cotizar Arriendo</a>
               </div>
             </div>

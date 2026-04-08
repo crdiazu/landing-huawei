@@ -10,6 +10,9 @@ import Products from './pages/Products';
 import Contact from './pages/Contact';
 import Support1 from './pages/Support1';
 import Support2 from './pages/Support2';
+import Privacy from './pages/Privacy';
+import Terms from './pages/Terms';
+import Sitemap from './pages/Sitemap';
 
 function App() {
   return (
@@ -25,6 +28,9 @@ function App() {
             <Route path="/contacto" element={<Contact />} />
             <Route path="/soporte-tecnico" element={<Support1 />} />
             <Route path="/faq" element={<Support2 />} />
+            <Route path="/politicas-de-privacidad" element={<Privacy />} />
+            <Route path="/terminos-y-condiciones" element={<Terms />} />
+            <Route path="/sitemap" element={<Sitemap />} />
           </Routes>
         </Layout>
       </Router>

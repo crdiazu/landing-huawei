@@ -28,7 +28,7 @@
   transform: translate(-50%, -50%);
   width: 800px;
   height: 800px;
-  background: radial-gradient(circle, rgba(230,0,18,0.15) 0%, rgba(0,0,0,0) 70%);
+  background: radial-gradient(circle, rgba(31,78,121,0.18) 0%, rgba(0,0,0,0) 70%);
   z-index: 1;
 }
 

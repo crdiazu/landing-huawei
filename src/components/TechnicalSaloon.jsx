@@ -74,8 +74,6 @@ const TechnicalSaloon = () => {
       
       <div className="brand-header-white">
         <div className="container brand-header-content">
-          <img src="/huawei-vertical-logo.png" alt="Huawei" className="brand-logo-huawei-vertical" />
-          <div className="brand-divider"></div>
           <img src="/logo-aistana-full.png" alt="Aistana" className="brand-logo-aistana" />
         </div>
       </div>

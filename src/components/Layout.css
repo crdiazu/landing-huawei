@@ -30,6 +30,18 @@ main {
   gap: 20px;
 }
 
+@media (max-width: 640px) {
+  .logos {
+    gap: 12px;
+  }
+  .logo-partner img {
+    height: 40px !important;
+  }
+  .logo-huawei img {
+    height: 26px !important;
+  }
+}
+
 .logo-divider {
   width: 1px;
   height: 30px;

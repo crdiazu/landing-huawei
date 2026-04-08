@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 :root {
-  --huawei-red: #E60012; /* Actual Huawei Red */
+  --huawei-red: #1F4E79; /* Actual Huawei Red */
   --aistana-green: #4A7C59; /* Aistana Green */
   --huawei-black: #000000;
   --huawei-white: #FFFFFF;

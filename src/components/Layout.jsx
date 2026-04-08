@@ -48,13 +48,9 @@ const Layout = ({ children }) => {
       {/* Navbar */}
       <nav className="navbar" id="navbar">
         <div className="logos">
-            <Link to="/" className="logo-partner">
-                <img src="/logo.png" alt="AISTANA Logo" style={{ height: '38px', width: 'auto', display: 'block' }} loading="lazy" />
+            <Link to="/" className="logo-partner" aria-label="Inicio AISTANA" onClick={() => setIsMenuOpen(false)}>
+                <img src="/logo.png" alt="AISTANA Logo" style={{ height: '46px', width: 'auto', display: 'block' }} loading="lazy" />
                 <span>AISTANA</span>
-            </Link>
-            <div className="logo-divider"></div>
-            <Link to="/" className="logo-huawei">
-                <img src="/REFERENCIAS_HUAWEI/huaweilogo-new.png" alt="Huawei Logo" style={{ height: '30px', width: 'auto', display: 'block' }} loading="lazy" />
             </Link>
         </div>
         
@@ -90,20 +86,18 @@ const Layout = ({ children }) => {
         <div className="footer-grid">
             <div className="footer-about">
                 <div className="logos" style={{ marginBottom: '20px' }}>
-                    <div className="logo-huawei">
-                        <img src="/REFERENCIAS_HUAWEI/huaweilogo-new.png" alt="Huawei Logo" style={{ height: '30px', width: 'auto', display: 'block', filter: 'brightness(0) invert(1)' }} loading="lazy" />
-                    </div>
-                    <div className="logo-divider" style={{ backgroundColor: 'rgba(255,255,255,0.2)' }}></div>
-                    <div className="logo-partner">
-                        <img src="/logo.png" alt="AISTANA Logo" style={{ height: '30px', width: 'auto', display: 'block', filter: 'brightness(0) invert(1)' }} loading="lazy" />
+                    <Link to="/" className="logo-partner" aria-label="Inicio AISTANA" onClick={() => setIsMenuOpen(false)}>
+                        <img src="/logo.png" alt="AISTANA Logo" style={{ height: '36px', width: 'auto', display: 'block', filter: 'brightness(0) invert(1)' }} loading="lazy" />
                         <span style={{ color: 'white' }}>AISTANA</span>
-                    </div>
+                    </Link>
                 </div>
                 <p>Somos el aliado estratégico en Chile para la integración de soluciones de conectividad empresarial, cartelería digital y salas de colaboración inteligente basadas en Huawei eKit.</p>
                 <div className="social-links">
-                    <a href="#" aria-label="LinkedIn"><i className="fa-brands fa-linkedin-in"></i></a>
-                    <a href="#" aria-label="Instagram"><i className="fa-brands fa-instagram"></i></a>
-                    <a href="#" aria-label="YouTube"><i className="fa-brands fa-youtube"></i></a>
+                    <a href="https://www.linkedin.com/company/aistana" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i className="fa-brands fa-linkedin-in"></i></a>
+                    <a href="https://www.instagram.com/aistana.cl" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i className="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i className="fa-brands fa-youtube"></i></a>
+                    <a href="mailto:ventas@aistana.cl" aria-label="Email"><i className="fa-solid fa-envelope"></i></a>
+                    <a href="tel:+56932924865" aria-label="Teléfono"><i className="fa-solid fa-phone"></i></a>
                 </div>
             </div>
 
@@ -123,24 +117,24 @@ const Layout = ({ children }) => {
                 <ul className="contact-info">
                     <li>
                         <i className="fa-solid fa-location-dot"></i>
-                        <span>Rosario Norte 532 piso 17, Las Condes</span>
+                        <span>Av. Pedro de Valdivia 273, Of. 607, Providencia, Santiago, Chile</span>
                     </li>
                     <li>
                         <i className="fa-solid fa-envelope"></i>
-                        <span>ignacio@aistana.cl</span>
+                        <a href="mailto:ventas@aistana.cl" style={{ color: '#fff', textDecoration: 'underline' }}>ventas@aistana.cl</a>
                     </li>
                     <li>
                         <i className="fa-brands fa-whatsapp"></i>
-                        <a href="https://wa.me/56932924865" target="_blank" rel="noopener noreferrer" style={{ color: '#fff', textDecoration: 'underline' }}>+56 9 3292 4865</a>
+                        <a href="https://wa.me/56932924865" target="_blank" rel="noopener noreferrer" style={{ color: '#fff', textDecoration: 'underline' }}>WhatsApp Comercial</a>
                     </li>
                 </ul>
             </div>
         </div>
         <div className="footer-bottom">
             <div style={{ display: 'flex', justifyContent: 'center', gap: '20px', marginBottom: '15px' }}>
-                <a href="#" style={{ color: '#888', textDecoration: 'none', fontSize: '0.9rem' }}>Políticas de Privacidad</a>
+                <Link to="/politicas-de-privacidad" style={{ color: '#888', textDecoration: 'none', fontSize: '0.9rem' }}>Políticas de Privacidad</Link>
                 <span style={{ color: '#555' }}>|</span>
-                <a href="#" style={{ color: '#888', textDecoration: 'none', fontSize: '0.9rem' }}>Términos y Condiciones</a>
+                <Link to="/terminos-y-condiciones" style={{ color: '#888', textDecoration: 'none', fontSize: '0.9rem' }}>Términos y Condiciones</Link>
                 <span style={{ color: '#555' }}>|</span>
                 <Link to="/sitemap" style={{ color: '#888', textDecoration: 'none', fontSize: '0.9rem' }}>Mapa del Sitio</Link>
             </div>
