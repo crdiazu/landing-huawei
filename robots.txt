@@ -1,0 +1,11 @@
+User-agent: *
+Allow: /
+# Block internal build artifacts or preview-only paths if any appear later
+# Disallow: /admin/
+# Disallow: /api/
+
+# Crawl-delay to reduce server stress (optional)
+Crawl-delay: 5
+
+# Target market: Chile (es-CL). Primary sitemap for discovery
+Sitemap: https://www.aistana.cl/sitemap.xml

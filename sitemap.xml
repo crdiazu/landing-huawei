@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <!-- Base URLs for SPA routes (update domain if needed) -->
+  <url>
+    <loc>https://www.aistana.cl/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="es-CL" href="https://www.aistana.cl/"/>
+  </url>
+  <url>
+    <loc>https://www.aistana.cl/arriendo</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="es-CL" href="https://www.aistana.cl/arriendo"/>
+  </url>
+  <url>
+    <loc>https://www.aistana.cl/integradores</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="es-CL" href="https://www.aistana.cl/integradores"/>
+  </url>
+  <url>
+    <loc>https://www.aistana.cl/productos</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="es-CL" href="https://www.aistana.cl/productos"/>
+  </url>
+  <url>
+    <loc>https://www.aistana.cl/nosotros</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="es-CL" href="https://www.aistana.cl/nosotros"/>
+  </url>
+  <url>
+    <loc>https://www.aistana.cl/contacto</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="es-CL" href="https://www.aistana.cl/contacto"/>
+  </url>
+  <url>
+    <loc>https://www.aistana.cl/soporte-tecnico</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="es-CL" href="https://www.aistana.cl/soporte-tecnico"/>
+  </url>
+  <url>
+    <loc>https://www.aistana.cl/faq</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="es-CL" href="https://www.aistana.cl/faq"/>
+  </url>
+</urlset>
