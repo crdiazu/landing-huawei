@@ -37,6 +37,29 @@ const Rent = () => {
               </ul>
             </div>
           </div>
+
+          <div style={{ marginTop: '50px' }}>
+            <a 
+              href="https://wa.me/56932924865?text=Hola%20AISTANA%2C%20quisiera%20cotizar%20el%20arriendo%20de%20pantallas%20Huawei%20IdeaHub" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              style={{ 
+                padding: '16px 36px', 
+                backgroundColor: '#1F4E79', 
+                borderRadius: '12px', 
+                color: '#FFFFFF', 
+                textDecoration: 'none', 
+                fontWeight: 800, 
+                fontSize: '1.15rem', 
+                display: 'inline-flex', 
+                alignItems: 'center', 
+                gap: '12px',
+                boxShadow: '0 8px 20px rgba(31, 78, 121, 0.3)'
+              }}
+            >
+              <i className="fa-brands fa-whatsapp" style={{ fontSize: '1.4rem' }}></i> Solicitar Cotización de Arriendo
+            </a>
+          </div>
         </div>
       </div>
     </div>

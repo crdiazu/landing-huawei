@@ -24,10 +24,11 @@ const Navbar = () => {
         </div>
 
         <div className="desktop-menu">
-          <a href="#hero" className="nav-link">Inicio</a>
-          <a href="#alliance" className="nav-link">Alianza</a>
-          <a href="#displays" className="nav-link">Pantallas Huawei</a>
-          <a href="#contact" className="btn btn-primary nav-btn">Contáctanos</a>
+          <a href="/#hero" className="nav-link">Inicio</a>
+          <a href="/#alliance" className="nav-link">Alianza</a>
+          <a href="/#displays" className="nav-link">Pantallas Huawei</a>
+          <a href="/evento" className="nav-link" style={{color: '#e60000', fontWeight: 'bold'}}>Evento Abril</a>
+          <a href="/#contact" className="btn btn-primary nav-btn">Contáctanos</a>
         </div>
 
         <div className="mobile-menu-btn" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
@@ -37,10 +38,11 @@ const Navbar = () => {
 
       {isMobileMenuOpen && (
         <div className="mobile-menu">
-          <a href="#hero" className="mobile-nav-link" onClick={() => setIsMobileMenuOpen(false)}>Inicio</a>
-          <a href="#alliance" className="mobile-nav-link" onClick={() => setIsMobileMenuOpen(false)}>Alianza</a>
-          <a href="#displays" className="mobile-nav-link" onClick={() => setIsMobileMenuOpen(false)}>Pantallas</a>
-          <a href="#contact" className="btn btn-primary mobile-nav-btn" onClick={() => setIsMobileMenuOpen(false)}>Contáctanos</a>
+          <a href="/#hero" className="mobile-nav-link" onClick={() => setIsMobileMenuOpen(false)}>Inicio</a>
+          <a href="/#alliance" className="mobile-nav-link" onClick={() => setIsMobileMenuOpen(false)}>Alianza</a>
+          <a href="/#displays" className="mobile-nav-link" onClick={() => setIsMobileMenuOpen(false)}>Pantallas</a>
+          <a href="/evento" className="mobile-nav-link" style={{color: '#e60000'}} onClick={() => setIsMobileMenuOpen(false)}>Evento Abril</a>
+          <a href="/#contact" className="btn btn-primary mobile-nav-btn" onClick={() => setIsMobileMenuOpen(false)}>Contáctanos</a>
         </div>
       )}
     </nav>

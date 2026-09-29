@@ -13,6 +13,9 @@ import Support2 from './pages/Support2';
 import Privacy from './pages/Privacy';
 import Terms from './pages/Terms';
 import Sitemap from './pages/Sitemap';
+import Evento from './pages/Evento';
+import NewsArchive from './pages/NewsArchive';
+import NewsDetail from './pages/NewsDetail';
 
 function App() {
   return (
@@ -31,6 +34,9 @@ function App() {
             <Route path="/politicas-de-privacidad" element={<Privacy />} />
             <Route path="/terminos-y-condiciones" element={<Terms />} />
             <Route path="/sitemap" element={<Sitemap />} />
+            <Route path="/evento" element={<Evento />} />
+            <Route path="/noticias" element={<NewsArchive />} />
+            <Route path="/noticias/:id" element={<NewsDetail />} />
           </Routes>
         </Layout>
       </Router>

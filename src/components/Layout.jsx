@@ -3,6 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import './Layout.css';
 import GoogleAnalytics from './GoogleAnalytics';
+import FloatingWhatsApp from './FloatingWhatsApp';
 
 const Layout = ({ children }) => {
   const location = useLocation();
@@ -23,12 +24,12 @@ const Layout = ({ children }) => {
             "@context":"https://schema.org",
             "@type":"Organization",
             "name":"AISTANA SpA",
-            "url":"https://aistana-huawei.vercel.app",
-            "logo":"https://aistana-huawei.vercel.app/logo.png",
+            "url":"https://aistana.cl",
+            "logo":"https://aistana.cl/logo.png",
             "address":{
               "@type":"PostalAddress",
-              "streetAddress":"Rosario Norte 532 piso 17",
-              "addressLocality":"Las Condes",
+              "streetAddress":"Av. Pedro de Valdivia 273, Of. 607",
+              "addressLocality":"Providencia",
               "addressRegion":"RM",
               "addressCountry":"CL"
             },
@@ -41,7 +42,7 @@ const Layout = ({ children }) => {
                 "availableLanguage":"es-CL"
               }
             ],
-            "sameAs":[]
+            "sameAs":["https://www.linkedin.com/company/aistana"]
           })}
         </script>
       </Helmet>
@@ -49,29 +50,36 @@ const Layout = ({ children }) => {
       <nav className="navbar" id="navbar">
         <div className="logos">
             <Link to="/" className="logo-partner" aria-label="Inicio AISTANA" onClick={() => setIsMenuOpen(false)}>
-                <img src="/logo.png" alt="AISTANA Logo" style={{ height: '46px', width: 'auto', display: 'block' }} loading="lazy" />
-                <span>AISTANA</span>
+                <img src="/logo.png" alt="AISTANA Logo" style={{ height: '42px', width: 'auto', display: 'block' }} loading="lazy" />
+                <span className="brand-name">AISTANA</span>
             </Link>
+            <div className="logo-divider"></div>
+            <div className="partner-badge-header">
+                <span className="partner-label">CANAL OFICIAL</span>
+                <span className="partner-huawei">Huawei eKit</span>
+            </div>
         </div>
         
         {/* Hamburger Menu Icon */}
-        <div className="hamburger" onClick={toggleMenu}>
+        <div className="hamburger" onClick={toggleMenu} aria-label="Menú de navegación">
           <i className={`fa-solid ${isMenuOpen ? 'fa-xmark' : 'fa-bars'}`}></i>
         </div>
 
         <div className={`nav-links ${isMenuOpen ? 'active' : ''}`}>
             <Link to="/" className={location.pathname === '/' ? 'active' : ''} onClick={() => setIsMenuOpen(false)}>Inicio</Link>
+            <Link to="/productos" className={location.pathname === '/productos' ? 'active' : ''} onClick={() => setIsMenuOpen(false)}>Pantallas IdeaHub</Link>
             <div className="dropdown">
-              <span className="dropdown-title">Servicios <i className="fa-solid fa-chevron-down" style={{ fontSize: '0.8rem', marginLeft: '5px' }}></i></span>
+              <span className="dropdown-title">Soluciones <i className="fa-solid fa-chevron-down" style={{ fontSize: '0.8rem', marginLeft: '5px' }}></i></span>
               <div className="dropdown-content">
-                <Link to="/arriendo" onClick={() => setIsMenuOpen(false)}>Arriendo de Pantallas</Link>
-                <Link to="/integradores" onClick={() => setIsMenuOpen(false)}>Para Integradores</Link>
+                <Link to="/arriendo" onClick={() => setIsMenuOpen(false)}>Arriendo de Pantallas (OPEX)</Link>
+                <Link to="/integradores" onClick={() => setIsMenuOpen(false)}>Para Integradores TI</Link>
+                <Link to="/soporte-tecnico" onClick={() => setIsMenuOpen(false)}>Soporte & Postventa</Link>
               </div>
             </div>
-            <Link to="/productos" className={location.pathname === '/productos' ? 'active' : ''} onClick={() => setIsMenuOpen(false)}>Productos</Link>
+            <a href="/#noticias" onClick={() => setIsMenuOpen(false)}>Noticias & Eventos</a>
             <Link to="/nosotros" className={location.pathname === '/nosotros' ? 'active' : ''} onClick={() => setIsMenuOpen(false)}>Nosotros</Link>
-            <Link to="/contacto" className="btn-primary" style={{ backgroundColor: '#4A7C59', borderColor: '#4A7C59' }} onClick={() => setIsMenuOpen(false)}>
-                Contactar Ventas
+            <Link to="/contacto" className="btn-primary" style={{ backgroundColor: '#1F4E79', borderColor: '#1F4E79' }} onClick={() => setIsMenuOpen(false)}>
+                Cotizar Proyecto
             </Link>
         </div>
       </nav>
@@ -80,6 +88,9 @@ const Layout = ({ children }) => {
       <main>
         {children}
       </main>
+
+      {/* Floating WhatsApp CTA */}
+      <FloatingWhatsApp />
 
       {/* Footer */}
       <footer className="footer" id="contacto">
@@ -94,26 +105,26 @@ const Layout = ({ children }) => {
                 <p>Somos el aliado estratégico en Chile para la integración de soluciones de conectividad empresarial, cartelería digital y salas de colaboración inteligente basadas en Huawei eKit.</p>
                 <div className="social-links">
                     <a href="https://www.linkedin.com/company/aistana" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i className="fa-brands fa-linkedin-in"></i></a>
-                    <a href="https://www.instagram.com/aistana.cl" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i className="fa-brands fa-instagram"></i></a>
-                    <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i className="fa-brands fa-youtube"></i></a>
+                    <a href="https://wa.me/56932924865" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i className="fa-brands fa-whatsapp"></i></a>
                     <a href="mailto:ventas@aistana.cl" aria-label="Email"><i className="fa-solid fa-envelope"></i></a>
-                    <a href="tel:+56932924865" aria-label="Teléfono"><i className="fa-solid fa-phone"></i></a>
+                    <a href="/productos" aria-label="Huawei IdeaHub"><i className="fa-solid fa-display"></i></a>
                 </div>
             </div>
 
             <div className="footer-links">
-                <h4>Enlaces Rápidos</h4>
+                <h4>Soluciones & Productos</h4>
                 <ul>
-                    <li><Link to="/arriendo">Campaña Arriendo</Link></li>
-                    <li><Link to="/integradores">Para Integradores</Link></li>
-                    <li><Link to="/productos">Monitores y Pantallas</Link></li>
-                    <li><Link to="/soporte-tecnico">Soporte Técnico</Link></li>
+                    <li><Link to="/productos">Huawei IdeaHub Serie S3 & B3</Link></li>
+                    <li><Link to="/arriendo">Campaña Arriendo Flexible</Link></li>
+                    <li><Link to="/integradores">Programa Integradores TI</Link></li>
+                    <li><a href="/#noticias">Noticias y Eventos</a></li>
+                    <li><Link to="/soporte-tecnico">Soporte Técnico Especializado</Link></li>
                     <li><Link to="/faq">Preguntas Frecuentes</Link></li>
                 </ul>
             </div>
 
             <div className="footer-contact">
-                <h4>Contacto</h4>
+                <h4>Contacto Directo</h4>
                 <ul className="contact-info">
                     <li>
                         <i className="fa-solid fa-location-dot"></i>
@@ -125,20 +136,20 @@ const Layout = ({ children }) => {
                     </li>
                     <li>
                         <i className="fa-brands fa-whatsapp"></i>
-                        <a href="https://wa.me/56932924865" target="_blank" rel="noopener noreferrer" style={{ color: '#fff', textDecoration: 'underline' }}>WhatsApp Comercial</a>
+                        <a href="https://wa.me/56932924865" target="_blank" rel="noopener noreferrer" style={{ color: '#fff', textDecoration: 'underline' }}>WhatsApp Comercial (+56 9 3292 4865)</a>
                     </li>
                 </ul>
             </div>
         </div>
         <div className="footer-bottom">
-            <div style={{ display: 'flex', justifyContent: 'center', gap: '20px', marginBottom: '15px' }}>
+            <div style={{ display: 'flex', justifyContent: 'center', gap: '20px', marginBottom: '15px', flexWrap: 'wrap' }}>
                 <Link to="/politicas-de-privacidad" style={{ color: '#888', textDecoration: 'none', fontSize: '0.9rem' }}>Políticas de Privacidad</Link>
                 <span style={{ color: '#555' }}>|</span>
                 <Link to="/terminos-y-condiciones" style={{ color: '#888', textDecoration: 'none', fontSize: '0.9rem' }}>Términos y Condiciones</Link>
                 <span style={{ color: '#555' }}>|</span>
                 <Link to="/sitemap" style={{ color: '#888', textDecoration: 'none', fontSize: '0.9rem' }}>Mapa del Sitio</Link>
             </div>
-            <p>&copy; {new Date().getFullYear()} AISTANA SpA. Todos los derechos reservados.</p>
+            <p>&copy; {new Date().getFullYear()} AISTANA SpA. Todos los derechos reservados. Canal Oficial Huawei eKit.</p>
         </div>
       </footer>
     </div>
@@ -146,3 +157,4 @@ const Layout = ({ children }) => {
 };
 
 export default Layout;
+

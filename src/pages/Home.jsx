@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
+import { Link } from 'react-router-dom';
 import { motion as Motion } from 'framer-motion';
 import { Calendar, CheckCircle, Handshake, Monitor, PenTool, Users, Video, Wifi } from 'lucide-react';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -9,17 +10,18 @@ import { useIntersectionObserver } from '../hooks/useIntersectionObserver';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
+import newsPosts from '../data/news';
 
 const Home = () => {
   useIntersectionObserver();
   const [scrollY, setScrollY] = useState(0);
   const miniImages = [
-    "/carousel_images/Imagen1.jpg",
-    "/carousel_images/Imagen2.jpg",
-    "/carousel_images/Imagen3.jpg",
-    "/carousel_images/Imagen6.png",
-    "/carousel_images/Imagen7.jpg",
-    "/carousel_images/Imagen8.jpg",
+    "/carousel_images/IMG_9285.jpg",
+    "/carousel_images/IMG_9286.jpg",
+    "/carousel_images/IMG_9291.jpg",
+    "/carousel_images/IMG_9295.jpg",
+    "/carousel_images/IMG_9377.jpg",
+    "/carousel_images/IMG_9381.jpg",
   ];
   const [miniIndex, setMiniIndex] = useState(0);
   const [isOfficeMapInfoOpen, setIsOfficeMapInfoOpen] = useState(false);
@@ -80,7 +82,9 @@ const Home = () => {
                 transition={{ duration: 0.8 }}
                 className="hero-text"
               >
-                  <div className="tag" style={{ background: 'rgba(31, 78, 121, 0.14)', color: '#1F4E79', border: '1px solid rgba(31, 78, 121, 0.35)' }}>Canal oficial eKIT HUAWEI</div>
+                  <div className="tag" style={{ background: '#1F4E79', color: '#FFFFFF', border: '1px solid #1F4E79', padding: '6px 16px', borderRadius: '20px', fontWeight: 800, fontSize: '0.88rem', letterSpacing: '0.06em', textTransform: 'uppercase', display: 'inline-flex', alignItems: 'center', gap: '8px' }}>
+                    <i className="fa-solid fa-certificate" style={{ color: '#68D391' }}></i> Canal Oficial eKit HUAWEI
+                  </div>
                   <h1 className="huawei-brand-font" style={{ fontSize: '4.2rem' }}>Colaboración Inteligente con <span style={{ color: '#1F4E79' }}>Huawei IdeaHub</span></h1>
                   <p style={{ fontSize: '1.4rem' }}>Transforma los espacios colaborativos de tus clientes con pantallas interactivas de última generación. Cotiza con expertos de AISTANA.</p>
                   <div className="hero-buttons">
@@ -139,7 +143,7 @@ const Home = () => {
                       <Users size={34} color="#4A7C59" strokeWidth={2} />
                   </div>
                   <h3 className="huawei-brand-font" style={{ fontSize: '2rem', color: '#333', marginBottom: '15px' }}>Programa Resellers</h3>
-                  <p style={{ color: '#555', lineHeight: '1.6' }}>programa exclusivo para partners Elite DP. Accede a compra de stock y precios preferenciales para tu cadena de distribucion.</p>
+                  <p style={{ color: '#555', lineHeight: '1.6' }}>Programa exclusivo para partners Elite DP. Accede a compra de stock local y precios preferenciales para tu cadena de distribución.</p>
                   <a href="/productos" style={{ display: 'inline-block', marginTop: 'auto', fontWeight: 'bold', color: '#4A7C59', textDecoration: 'none', padding: '10px 20px', border: '2px solid #4A7C59', borderRadius: '6px', transition: 'all 0.3s' }}>Conocer más →</a>
               </Motion.div>
           </div>
@@ -243,8 +247,8 @@ const Home = () => {
                 <div className="huawei-brand-font" style={{ display: 'inline-flex', alignItems: 'center', gap: '10px', padding: '8px 14px', borderRadius: '999px', backgroundColor: 'rgba(74,124,89,0.14)', border: '1px solid rgba(74,124,89,0.35)', color: '#c9ffd9', fontWeight: 800, letterSpacing: '0.06em' }}>
                   VISITA NUESTRO SHOWROOM
                 </div>
-                <h2 className="huawei-brand-font" style={{ fontSize: '3.2rem', color: '#4A7C59', margin: '14px 0 10px', fontWeight: 900, lineHeight: 1.1 }}>
-                  Vive la experiencia completa de Huawei IdeaHub
+                <h2 className="huawei-brand-font" style={{ fontSize: '3.2rem', color: '#FFFFFF', margin: '14px 0 10px', fontWeight: 900, lineHeight: 1.1 }}>
+                  Vive la experiencia completa de <span style={{ color: '#4ADE80' }}>Huawei IdeaHub</span>
                 </h2>
                 <p style={{ fontSize: '1.18rem', color: 'rgba(255,255,255,0.86)', lineHeight: 1.7, margin: 0, maxWidth: '640px' }}>
                   Te esperamos en nuestro showroom físico con <strong>todos los modelos disponibles</strong> para prueba inmediata. Agenda una demo y comprueba en vivo la fluidez, la calidad de videoconferencia y las funciones BYOM.
@@ -295,14 +299,14 @@ const Home = () => {
                     <SwiperSlide>
                       <div style={{ padding: '14px' }}>
                         <img
-                          src="/carousel_images/Imagen7.jpg"
+                          src="/carousel_images/IMG_9383.jpg"
                           alt="Showroom AISTANA"
                           style={{ width: '100%', height: '220px', objectFit: 'cover', borderRadius: '14px', display: 'block' }}
                           loading="lazy"
                         />
                         <div style={{ height: '10px' }} />
                         <img
-                          src="/carousel_images/Imagen3.jpg"
+                          src="/carousel_images/IMG_9377.jpg"
                           alt="Huawei IdeaHub en demostración"
                           style={{ width: '100%', height: '220px', objectFit: 'cover', borderRadius: '14px', display: 'block' }}
                           loading="lazy"
@@ -314,6 +318,48 @@ const Home = () => {
               </div>
             </div>
           </Motion.div>
+        </div>
+      </section>
+
+      {/* News Section */}
+      <section id="noticias" style={{ padding: '80px 5%', backgroundColor: '#fff', position: 'relative', zIndex: 10 }}>
+        <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
+          <div className="section-header" style={{ textAlign: 'center', marginBottom: '60px' }}>
+            <h2 className="huawei-brand-font" style={{ fontSize: '3.2rem', fontWeight: 800, marginBottom: '20px', color: '#1A1A1A' }}>Últimas Noticias y Eventos</h2>
+            <p style={{ color: '#666', fontSize: '1.4rem', maxWidth: '700px', margin: '0 auto' }}>Mantente al tanto de nuestros eventos, lanzamientos y novedades en el ecosistema Huawei.</p>
+            <div style={{ width: '60px', height: '4px', backgroundColor: '#4A7C59', margin: '20px auto 0' }}></div>
+          </div>
+          
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '40px' }}>
+            {newsPosts.map((post) => (
+              <Motion.div 
+                key={post.id}
+                whileHover={{ y: -8 }}
+                style={{ backgroundColor: '#F9F9F9', borderRadius: '16px', overflow: 'hidden', boxShadow: '0 15px 35px rgba(0,0,0,0.05)', border: '1px solid rgba(0,0,0,0.05)' }}
+              >
+                <div style={{ height: '260px', backgroundColor: '#eaeaea', position: 'relative' }}>
+                  <img src={post.thumbnail} alt={post.title} style={{ width: '100%', height: '100%', objectFit: 'cover' }} loading="lazy" />
+                  <div style={{ position: 'absolute', top: '15px', right: '15px', backgroundColor: post.categoryColor, color: 'white', padding: '6px 12px', borderRadius: '6px', fontWeight: 'bold', fontSize: '0.85rem' }}>
+                    {post.category}
+                  </div>
+                </div>
+                <div style={{ padding: '30px' }}>
+                  <span style={{ color: '#4A7C59', fontSize: '0.9rem', fontWeight: 'bold', display: 'block', marginBottom: '10px' }}>{post.date}</span>
+                  <h3 className="huawei-brand-font" style={{ fontSize: '1.6rem', color: '#333', marginBottom: '15px' }}>{post.title}</h3>
+                  <p style={{ color: '#666', lineHeight: '1.6', marginBottom: '20px' }}>{post.excerpt}</p>
+                  <Link to={`/noticias/${post.id}`} style={{ color: '#1F4E79', fontWeight: 'bold', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '8px' }}>
+                    Más información <i className="fa-solid fa-arrow-right" style={{ fontSize: '0.8rem' }}></i>
+                  </Link>
+                </div>
+              </Motion.div>
+            ))}
+          </div>
+          
+          <div style={{ textAlign: 'center', marginTop: '50px' }}>
+            <Link to="/noticias" className="btn-secondary" style={{ textDecoration: 'none', padding: '12px 30px', borderRadius: '50px', border: '2px solid #4A7C59', color: '#4A7C59', fontWeight: 'bold', display: 'inline-flex', alignItems: 'center', gap: '10px' }}>
+              Ver todas las noticias <i className="fa-solid fa-plus" style={{ fontSize: '0.8rem' }}></i>
+            </Link>
+          </div>
         </div>
       </section>
 
@@ -365,124 +411,222 @@ const Home = () => {
         <ParallaxBackground 
           webpSrc="/bg_images/Huawei_IdeaHub_small_room.webp" 
           fallbackSrc="/bg_images/Huawei_IdeaHub_small_room.jpg" 
-          overlayColor="rgba(245, 245, 245, 0.85)"
+          overlayColor="rgba(245, 245, 245, 0.9)"
         />
-        <div className="parallax-content" style={{ maxWidth: '1000px', margin: '0 auto', display: 'flex', flexWrap: 'wrap', gap: '50px', backgroundColor: '#fff', borderRadius: '16px', overflow: 'hidden', boxShadow: '0 20px 40px rgba(0,0,0,0.08)' }}>
-          <div style={{ flex: '1 1 400px', backgroundColor: '#4A7C59', color: 'white', padding: '50px' }}>
-            <h3 className="huawei-brand-font" style={{ fontSize: '2.5rem', marginBottom: '20px' }}>Hablemos de tu proyecto</h3>
-            <p style={{ marginBottom: '40px', lineHeight: '1.6', opacity: 0.9, fontSize: '1.1rem' }}>Un especialista en soluciones Huawei se pondrá en contacto contigo para asesorarte en la mejor opción para tu empresa.</p>
-            <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
-              <li style={{ display: 'flex', alignItems: 'flex-start', gap: '15px', marginBottom: '20px', flexWrap: 'wrap' }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '15px', flex: '1 1 240px', minWidth: '240px' }}>
-                  <i className="fa-solid fa-location-dot"></i>
-                  <a
-                    href="https://www.google.com/maps?q=Av.%20Pedro%20de%20Valdivia%20273%2C%20Providencia%2C%20Santiago%2C%20Chile"
-                    target="_blank"
+        <div className="parallax-content" style={{ maxWidth: '1200px', margin: '0 auto' }}>
+          <Motion.div 
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            style={{ 
+              display: 'grid', 
+              gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', 
+              backgroundColor: '#fff', 
+              borderRadius: '24px', 
+              overflow: 'hidden', 
+              boxShadow: '0 30px 60px -12px rgba(0, 0, 0, 0.15)',
+              border: '1px solid rgba(0,0,0,0.05)'
+            }}
+          >
+            {/* Left Column: Contact info & Branding */}
+            <div style={{ 
+              padding: '60px 50px', 
+              background: 'linear-gradient(135deg, #1F4E79 0%, #4A7C59 100%)', 
+              color: 'white',
+              position: 'relative',
+              overflow: 'hidden'
+            }}>
+              {/* Background decorative elements */}
+              <div style={{ position: 'absolute', top: '-100px', right: '-100px', width: '300px', height: '300px', borderRadius: '50%', background: 'rgba(255,255,255,0.05)', zIndex: 0 }}></div>
+              
+              <div style={{ position: 'relative', zIndex: 1 }}>
+                <h3 className="huawei-brand-font" style={{ fontSize: '3rem', marginBottom: '16px', lineHeight: 1.1, fontWeight: 900 }}>
+                  Hablemos de tu proyecto
+                </h3>
+                <p style={{ marginBottom: '44px', lineHeight: '1.6', opacity: 0.9, fontSize: '1.25rem', maxWidth: '440px' }}>
+                  Un especialista en soluciones Huawei te asesorará para encontrar la configuración perfecta para tu empresa.
+                </p>
+
+                <div style={{ display: 'grid', gap: '20px', marginBottom: '40px' }}>
+                  {/* WhatsApp Card */}
+                  <a 
+                    href="https://wa.me/56932924865" 
+                    target="_blank" 
                     rel="noopener noreferrer"
-                    style={{ color: 'inherit', textDecoration: 'underline' }}
+                    style={{ textDecoration: 'none', color: 'inherit' }}
                   >
-                    Av. Pedro de Valdivia 273, Of. 607, Providencia
-                  </a>
-                </div>
-                <div style={{ flex: '1 1 400px', minWidth: '280px', maxWidth: '400px' }}>
-                  <div style={{ position: 'relative', width: '100%', height: '300px', borderRadius: '14px', overflow: 'hidden', boxShadow: '0 12px 30px rgba(0,0,0,0.18)' }}>
-                    <iframe
-                      title="Mapa AISTANA - Pedro de Valdivia"
-                      src="https://www.google.com/maps?q=Av.%20Pedro%20de%20Valdivia%20273%2C%20Providencia%2C%20Santiago%2C%20Chile&z=16&output=embed"
-                      width="100%"
-                      height="300"
-                      style={{ border: 0, display: 'block' }}
-                      loading="lazy"
-                      referrerPolicy="no-referrer-when-downgrade"
-                    ></iframe>
-                    <button
-                      type="button"
-                      onClick={() => setIsOfficeMapInfoOpen((v) => !v)}
-                      aria-label="Ver información de ubicación"
-                      style={{
-                        position: 'absolute',
-                        left: '50%',
-                        top: '50%',
-                        transform: 'translate(-50%, -100%)',
-                        width: '44px',
-                        height: '44px',
-                        borderRadius: '999px',
-                        backgroundColor: '#4A7C59',
-                        border: '2px solid rgba(255,255,255,0.95)',
-                        boxShadow: '0 10px 22px rgba(0,0,0,0.22)',
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        cursor: 'pointer',
-                        padding: 0
+                    <Motion.div 
+                      whileHover={{ x: 8, backgroundColor: 'rgba(255,255,255,0.15)' }}
+                      style={{ 
+                        display: 'flex', 
+                        alignItems: 'center', 
+                        gap: '20px', 
+                        padding: '20px', 
+                        borderRadius: '16px', 
+                        backgroundColor: 'rgba(255,255,255,0.08)',
+                        backdropFilter: 'blur(4px)',
+                        border: '1px solid rgba(255,255,255,0.1)',
+                        transition: 'all 0.3s ease'
                       }}
                     >
-                      <img src="/logo.png" alt="AISTANA" style={{ width: '26px', height: '26px', objectFit: 'contain', filter: 'brightness(0) invert(1)' }} loading="lazy" />
-                    </button>
-                    {isOfficeMapInfoOpen && (
-                      <div
-                        role="dialog"
-                        aria-label="Información de ubicación AISTANA"
-                        style={{
-                          position: 'absolute',
-                          left: '50%',
-                          top: '50%',
-                          transform: 'translate(-50%, -155%)',
-                          width: '260px',
-                          backgroundColor: '#fff',
-                          color: '#333',
-                          borderRadius: '12px',
-                          padding: '10px 12px',
-                          boxShadow: '0 14px 34px rgba(0,0,0,0.22)',
-                          border: '1px solid rgba(0,0,0,0.06)'
-                        }}
-                      >
-                        <div style={{ fontWeight: 900, marginBottom: '4px' }}>AISTANA</div>
-                        <div style={{ fontSize: '0.95rem', lineHeight: 1.35 }}>
-                          Av. Pedro de Valdivia 273, Of. 607<br />
-                          Providencia, Santiago, Chile
-                        </div>
+                      <div style={{ width: '48px', height: '48px', borderRadius: '12px', backgroundColor: 'rgba(255,255,255,0.2)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                        <i className="fa-brands fa-whatsapp" style={{ fontSize: '1.5rem' }}></i>
                       </div>
-                    )}
+                      <div>
+                        <div style={{ fontSize: '0.85rem', textTransform: 'uppercase', letterSpacing: '0.1em', opacity: 0.7, marginBottom: '2px' }}>WhatsApp</div>
+                        <div style={{ fontSize: '1.15rem', fontWeight: 'bold' }}>+56 9 3292 4865</div>
+                      </div>
+                    </Motion.div>
+                  </a>
+
+                  {/* Email Card */}
+                  <a 
+                    href="mailto:ventas@aistana.cl" 
+                    style={{ textDecoration: 'none', color: 'inherit' }}
+                  >
+                    <Motion.div 
+                      whileHover={{ x: 8, backgroundColor: 'rgba(255,255,255,0.15)' }}
+                      style={{ 
+                        display: 'flex', 
+                        alignItems: 'center', 
+                        gap: '20px', 
+                        padding: '20px', 
+                        borderRadius: '16px', 
+                        backgroundColor: 'rgba(255,255,255,0.08)',
+                        backdropFilter: 'blur(4px)',
+                        border: '1px solid rgba(255,255,255,0.1)',
+                        transition: 'all 0.3s ease'
+                      }}
+                    >
+                      <div style={{ width: '48px', height: '48px', borderRadius: '12px', backgroundColor: 'rgba(255,255,255,0.2)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                        <i className="fa-solid fa-envelope" style={{ fontSize: '1.3rem' }}></i>
+                      </div>
+                      <div>
+                        <div style={{ fontSize: '0.85rem', textTransform: 'uppercase', letterSpacing: '0.1em', opacity: 0.7, marginBottom: '2px' }}>Email Corporativo</div>
+                        <div style={{ fontSize: '1.15rem', fontWeight: 'bold' }}>ventas@aistana.cl</div>
+                      </div>
+                    </Motion.div>
+                  </a>
+
+                  {/* Location Card */}
+                  <div style={{ 
+                    padding: '20px', 
+                    borderRadius: '16px', 
+                    backgroundColor: 'rgba(255,255,255,0.08)',
+                    backdropFilter: 'blur(4px)',
+                    border: '1px solid rgba(255,255,255,0.1)'
+                  }}>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '20px', marginBottom: '15px' }}>
+                      <div style={{ width: '48px', height: '48px', borderRadius: '12px', backgroundColor: 'rgba(255,255,255,0.2)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                        <i className="fa-solid fa-location-dot" style={{ fontSize: '1.3rem' }}></i>
+                      </div>
+                      <div>
+                        <div style={{ fontSize: '0.85rem', textTransform: 'uppercase', letterSpacing: '0.1em', opacity: 0.7, marginBottom: '2px' }}>Ubicación Showroom</div>
+                        <div style={{ fontSize: '1.05rem', fontWeight: 'bold', lineHeight: 1.3 }}>Av. Pedro de Valdivia 273, Of. 607, Providencia</div>
+                      </div>
+                    </div>
+                    
+                    {/* Map integrated into the card */}
+                    <div style={{ position: 'relative', width: '100%', height: '180px', borderRadius: '12px', overflow: 'hidden', boxShadow: '0 8px 20px rgba(0,0,0,0.2)' }}>
+                      <iframe
+                        title="Mapa AISTANA"
+                        src="https://www.google.com/maps?q=Av.%20Pedro%20de%20Valdivia%20273%2C%20Providencia%2C%20Santiago%2C%20Chile&z=15&output=embed"
+                        width="100%"
+                        height="100%"
+                        style={{ border: 0, display: 'block' }}
+                        loading="lazy"
+                      ></iframe>
+                      <div style={{ position: 'absolute', bottom: '10px', right: '10px' }}>
+                        <a 
+                          href="https://www.google.com/maps?q=Av.%20Pedro%20de%20Valdivia%20273%2C%20Providencia%2C%20Santiago%2C%20Chile" 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                          style={{ 
+                            display: 'inline-block', 
+                            padding: '6px 12px', 
+                            backgroundColor: '#fff', 
+                            color: '#1F4E79', 
+                            borderRadius: '6px', 
+                            fontSize: '0.8rem', 
+                            fontWeight: 'bold', 
+                            textDecoration: 'none',
+                            boxShadow: '0 4px 10px rgba(0,0,0,0.1)'
+                          }}
+                        >
+                          Ver en Google Maps
+                        </a>
+                      </div>
+                    </div>
                   </div>
                 </div>
-              </li>
-              <li style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '20px' }}>
-                <i className="fa-solid fa-envelope" style={{ width: '18px', textAlign: 'center' }}></i>
-                <a href="mailto:ventas@aistana.cl" style={{ color: 'inherit', textDecoration: 'underline' }}>ventas@aistana.cl</a>
-              </li>
-              <li style={{ display: 'flex', alignItems: 'center', gap: '15px' }}>
-                <i className="fa-brands fa-whatsapp" style={{ width: '18px', textAlign: 'center' }}></i>
-                <a href="https://wa.me/56932924865" target="_blank" rel="noopener noreferrer" style={{ color: 'inherit', textDecoration: 'underline' }}>
-                  +56 9 3292 4865
-                </a>
-              </li>
-            </ul>
-          </div>
-          <div style={{ flex: '1 1 400px', padding: '50px' }}>
-            <form onSubmit={(e) => {
-              e.preventDefault();
-              const formData = new FormData(e.target);
-              const message = `Hola Aistana, solicito información desde la web:\nNombre: ${formData.get('name')}\nEmail: ${formData.get('email')}\nEmpresa: ${formData.get('company')}`;
-              window.open(`https://wa.me/56932924865?text=${encodeURIComponent(message)}`, '_blank');
-            }}>
-              <div style={{ marginBottom: '20px' }}>
-                <label htmlFor="name" style={{ display: 'block', marginBottom: '8px', color: '#555', fontWeight: 'bold' }}>Nombre Completo *</label>
-                <input type="text" id="name" name="name" required style={{ width: '100%', padding: '12px', border: '1px solid #ddd', borderRadius: '6px' }} />
               </div>
-              <div style={{ marginBottom: '20px' }}>
-                <label htmlFor="email" style={{ display: 'block', marginBottom: '8px', color: '#555', fontWeight: 'bold' }}>Email Corporativo *</label>
-                <input type="email" id="email" name="email" required style={{ width: '100%', padding: '12px', border: '1px solid #ddd', borderRadius: '6px' }} />
+            </div>
+
+            {/* Right Column: Interactive Form */}
+            <div style={{ padding: '60px 50px', backgroundColor: '#fff' }}>
+              <div style={{ marginBottom: '36px' }}>
+                <h4 style={{ fontSize: '1.8rem', color: '#1A1A1A', marginBottom: '8px', fontWeight: 800 }}>Inicia tu consulta</h4>
+                <p style={{ color: '#666' }}>Completa los datos y te contactaremos en menos de 2 horas hábiles.</p>
               </div>
-              <div style={{ marginBottom: '30px' }}>
-                <label htmlFor="company" style={{ display: 'block', marginBottom: '8px', color: '#555', fontWeight: 'bold' }}>Empresa</label>
-                <input type="text" id="company" name="company" style={{ width: '100%', padding: '12px', border: '1px solid #ddd', borderRadius: '6px' }} />
-              </div>
-              <button type="submit" className="huawei-brand-font" style={{ width: '100%', padding: '15px', backgroundColor: '#1F4E79', color: 'white', border: 'none', borderRadius: '6px', fontSize: '1.2rem', cursor: 'pointer', transition: 'background 0.3s' }}>
-                Solicitar Asesoría por WhatsApp
-              </button>
-            </form>
-          </div>
+
+              <form onSubmit={(e) => {
+                e.preventDefault();
+                const formData = new FormData(e.target);
+                const message = `Hola Aistana, solicito información desde la web:\nNombre: ${formData.get('name')}\nEmail: ${formData.get('email')}\nEmpresa: ${formData.get('company')}\nMensaje: ${formData.get('message') || 'Sin mensaje adicional'}`;
+                window.open(`https://wa.me/56932924865?text=${encodeURIComponent(message)}`, '_blank');
+              }}>
+                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px', marginBottom: '20px' }}>
+                  <div style={{ gridColumn: 'span 2' }}>
+                    <label htmlFor="name" style={{ display: 'block', marginBottom: '8px', color: '#333', fontSize: '0.9rem', fontWeight: 700 }}>Nombre Completo *</label>
+                    <input type="text" id="name" name="name" required placeholder="Ej: Juan Pérez" style={{ width: '100%', padding: '14px', border: '1px solid #E0E0E0', borderRadius: '10px', fontSize: '1rem', outline: 'none', transition: 'border-color 0.3s' }} />
+                  </div>
+                  <div>
+                    <label htmlFor="email" style={{ display: 'block', marginBottom: '8px', color: '#333', fontSize: '0.9rem', fontWeight: 700 }}>Email Corporativo *</label>
+                    <input type="email" id="email" name="email" required placeholder="juan@empresa.cl" style={{ width: '100%', padding: '14px', border: '1px solid #E0E0E0', borderRadius: '10px', fontSize: '1rem', outline: 'none' }} />
+                  </div>
+                  <div>
+                    <label htmlFor="company" style={{ display: 'block', marginBottom: '8px', color: '#333', fontSize: '0.9rem', fontWeight: 700 }}>Empresa</label>
+                    <input type="text" id="company" name="company" placeholder="Nombre de tu empresa" style={{ width: '100%', padding: '14px', border: '1px solid #E0E0E0', borderRadius: '10px', fontSize: '1rem', outline: 'none' }} />
+                  </div>
+                </div>
+                <div style={{ marginBottom: '32px' }}>
+                  <label htmlFor="message" style={{ display: 'block', marginBottom: '8px', color: '#333', fontSize: '0.9rem', fontWeight: 700 }}>¿En qué podemos ayudarte?</label>
+                  <textarea id="message" name="message" rows="3" placeholder="Cuéntanos brevemente sobre tu requerimiento..." style={{ width: '100%', padding: '14px', border: '1px solid #E0E0E0', borderRadius: '10px', fontSize: '1rem', outline: 'none', resize: 'vertical' }}></textarea>
+                </div>
+                
+                <button 
+                  type="submit" 
+                  className="huawei-brand-font" 
+                  style={{ 
+                    width: '100%', 
+                    padding: '18px', 
+                    backgroundColor: '#1F4E79', 
+                    color: 'white', 
+                    border: 'none', 
+                    borderRadius: '12px', 
+                    fontSize: '1.2rem', 
+                    fontWeight: 900, 
+                    cursor: 'pointer', 
+                    transition: 'all 0.3s ease',
+                    boxShadow: '0 10px 20px rgba(31,78,121,0.2)',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    gap: '12px'
+                  }}
+                  onMouseOver={(e) => e.currentTarget.style.backgroundColor = '#153a5b'}
+                  onMouseOut={(e) => e.currentTarget.style.backgroundColor = '#1F4E79'}
+                >
+                  <i className="fa-brands fa-whatsapp" style={{ fontSize: '1.4rem' }}></i>
+                  Solicitar Asesoría por WhatsApp
+                </button>
+                <p style={{ textAlign: 'center', marginTop: '16px', color: '#999', fontSize: '0.85rem' }}>
+                  Respuesta inmediata vía WhatsApp Business.
+                </p>
+              </form>
+            </div>
+          </Motion.div>
         </div>
       </section>
     </>

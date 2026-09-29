@@ -20,4 +20,5 @@ pnpm-debug.log*
 .env
 .env.*
 .vercel/
+.firebase/
 

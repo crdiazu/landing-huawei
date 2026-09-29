@@ -44,8 +44,30 @@ main {
 
 .logo-divider {
   width: 1px;
-  height: 30px;
-  background-color: #ddd;
+  height: 28px;
+  background-color: #E2E8F0;
+}
+
+.partner-badge-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  line-height: 1.15;
+}
+
+.partner-label {
+  font-size: 0.62rem;
+  letter-spacing: 0.08em;
+  font-weight: 700;
+  color: #718096;
+  text-transform: uppercase;
+}
+
+.partner-huawei {
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: #1F4E79;
+  letter-spacing: 0.02em;
 }
 
 .logo-partner {
@@ -58,6 +80,7 @@ main {
   gap: 10px;
   text-decoration: none;
 }
+
 
 .nav-links {
   display: flex;

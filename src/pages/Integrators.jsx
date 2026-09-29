@@ -12,8 +12,8 @@ const Integrators = () => {
         </Helmet>
         
         <div style={{ maxWidth: '1000px', margin: '0 auto', textAlign: 'center' }}>
-          <div style={{ display: 'inline-block', backgroundColor: 'rgba(31,78,121,0.18)', color: '#4A7C59', padding: '8px 20px', borderRadius: '20px', marginBottom: '20px', fontWeight: 'bold', border: '1px solid rgba(31,78,121,0.45)' }}>
-            Programa de Partners B2B
+          <div style={{ display: 'inline-block', backgroundColor: 'rgba(74, 124, 89, 0.25)', color: '#68D391', padding: '8px 20px', borderRadius: '20px', marginBottom: '20px', fontWeight: 'bold', border: '1px solid rgba(74, 124, 89, 0.5)', letterSpacing: '0.05em' }}>
+            PROGRAMA DE PARTNERS B2B
           </div>
           <h1 className="huawei-brand-font" style={{ fontSize: '3.6rem', marginBottom: '20px' }}>Integradores de Tecnología</h1>
           <p style={{ fontSize: '1.4rem', color: '#ccc', marginBottom: '50px', lineHeight: '1.6' }}>

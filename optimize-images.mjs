@@ -17,8 +17,8 @@ const images = [
   'fondo1 .png'
 ];
 
-const sourceDir = 'c:\\Users\\Cristian\\Obsidian\\Cristian\\CDU\\PROYECTOS\\AISTANA';
-const destDir = 'c:\\Users\\Cristian\\Obsidian\\Cristian\\CDU\\PROYECTOS\\AISTANA\\aistana-huawei-displays\\public\\bg_images';
+const sourceDir = 'c:\\Users\\Cristian\\Obsidian\\Cristian\\CDU\\PROYECTOS\\AISTANA\\03_REDES_SOCIALES\\05_MARKETING_VISUAL';
+const destDir = 'c:\\Users\\Cristian\\Obsidian\\Cristian\\CDU\\PROYECTOS\\AISTANA\\01_PAGINA_WEB\\aistana-huawei-displays\\public\\bg_images';
 
 if (!fs.existsSync(destDir)) {
   fs.mkdirSync(destDir, { recursive: true });
