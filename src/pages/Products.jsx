@@ -15,7 +15,7 @@ const Products = () => {
         "Experiencia BYOM (Bring Your Own Meeting) inalámbrica 4K",
         "Pizarra colaborativa interactiva de latencia ultra baja (16ms)"
       ],
-      pdf: "/pdfs/IdeaHub S3 Datasheet-for reading - Spanish_Latin America_.pdf",
+      pdf: "/pdfs/HUAWEI-IdeaHub-S3-Datasheet.pdf",
       image: "/carousel_images/IMG_9285.jpg",
       badge: "Nuevo Flagship 2026",
       badgeColor: "#1F4E79",
@@ -32,7 +32,7 @@ const Products = () => {
         "Pizarra digital ultra fluida y reconocimiento óptico inteligente",
         "Algoritmos acústicos de cancelación de ruido ambiental"
       ],
-      pdf: "/pdfs/HUAWEI IdeaHub S2 Datasheet(Spanish).pdf",
+      pdf: "/pdfs/HUAWEI-IdeaHub-S2-Datasheet.pdf",
       image: "/carousel_images/IMG_9286.jpg",
       badge: "Más Vendido",
       badgeColor: "#4A7C59",
@@ -49,7 +49,7 @@ const Products = () => {
         "Compartición de pantalla inalámbrica ultrarrápida",
         "Excelente relación costo-rendimiento para despliegues masivos"
       ],
-      pdf: "/pdfs/HUAWEI IdeaHub B3 Datasheet(Spanish).pdf",
+      pdf: "/pdfs/HUAWEI-IdeaHub-B3-Datasheet.pdf",
       image: "/carousel_images/IMG_9291.jpg",
       badge: "Alta Productividad",
       badgeColor: "#1F4E79",
@@ -66,7 +66,7 @@ const Products = () => {
         "Ecosistema abierto para aplicaciones educativas y de diseño",
         "Pantalla 4K con tecnología antirreflejo y ángulo de visión de 178°"
       ],
-      pdf: "/pdfs/IdeaHub Board 3 Pro 24.0.0-Technical Presentation(25H2)-Spanish(Latin America) (1).pdf",
+      pdf: "/pdfs/HUAWEI-IdeaHub-Board-3-Pro-Presentation.pdf",
       image: "/carousel_images/IMG_9383.jpg",
       badge: "Educación & Training",
       badgeColor: "#2B6CB0",
