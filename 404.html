@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <title>Aistana - Redirigiendo...</title>
+    <script type="text/javascript">
+      // GitHub Pages SPA redirect: preserves path and query when refreshing or deep-linking
+      var pathSegmentsToKeep = 1;
+      var l = window.location;
+      var repoSegment = l.pathname.split('/')[1] === 'landing-huawei' ? '/landing-huawei' : '';
+      var route = l.pathname.slice(repoSegment.length);
+      l.replace(
+        l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') + repoSegment + '/?p=' +
+        encodeURIComponent(route) +
+        (l.search ? '&q=' + encodeURIComponent(l.search.slice(1)) : '') +
+        l.hash
+      );
+    </script>
+  </head>
+  <body>
+    <p>Redirigiendo a <a href="/">Aistana</a>...</p>
+  </body>
+</html>
